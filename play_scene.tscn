@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cupet4wimcgu0"]
+
+[ext_resource type="Texture2D" uid="uid://bcrpavqvnlvde" path="res://icon.svg" id="1_memhf"]
+
+[node name="PlayScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-220, -30)
+texture = ExtResource("1_memhf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-18, -128)
+texture = ExtResource("1_memhf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(201, -32)
+texture = ExtResource("1_memhf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-21, 127)
+texture = ExtResource("1_memhf")

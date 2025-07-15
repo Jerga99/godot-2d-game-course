@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://chpg0vwjqf583"]
+
+[ext_resource type="Texture2D" uid="uid://bcrpavqvnlvde" path="res://icon.svg" id="1_4flbx"]
+
+[node name="Player" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.541176, 0.6, 1)
+position = Vector2(-234, -185)
+rotation = -0.0081923
+texture = ExtResource("1_4flbx")
