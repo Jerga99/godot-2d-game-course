@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=3 format=3 uid="uid://cupet4wimcgu0"]
 
+[ext_resource type="Texture2D" uid="uid://bcrpavqvnlvde" path="res://icon.svg" id="1_memhf"]
 [ext_resource type="PackedScene" uid="uid://cqsorrlaroety" path="res://player.tscn" id="2_0tbyp"]
 
 [node name="PlayScene" type="Node2D"]
@@ -8,3 +9,8 @@
 zoom = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
+speed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(117, -7)
+texture = ExtResource("1_memhf")

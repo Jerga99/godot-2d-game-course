@@ -20,13 +20,6 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
-[input]
-
-left={
-"deadzone": 0.2,
-"events": []
-}
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

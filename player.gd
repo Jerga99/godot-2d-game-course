@@ -1,12 +1,11 @@
 extends Node2D
 
+@export var speed: float = 20
 
 func _process(delta: float):
+	var horizontal = Input.get_axis("ui_left", "ui_right")
+	var vertical = Input.get_axis("ui_up", "ui_down")
 	
-	self.position += Vector2(20, 10) * delta
+	var movement = Vector2(horizontal, vertical)
 	
-	self.position.x += 20 * delta
-	self.rotation += 10 * delta
-	self.scale += Vector2(0.4, 0.4) * delta
-	
-	
+	self.position += movement * speed * delta
