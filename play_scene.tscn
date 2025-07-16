@@ -8,4 +8,3 @@
 zoom = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
-position = Vector2(2, -2)
