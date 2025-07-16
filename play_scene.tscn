@@ -1,29 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=2 format=3 uid="uid://cupet4wimcgu0"]
 
-[ext_resource type="Texture2D" uid="uid://bcrpavqvnlvde" path="res://icon.svg" id="1_memhf"]
-[ext_resource type="PackedScene" uid="uid://chpg0vwjqf583" path="res://player.tscn" id="2_0tbyp"]
+[ext_resource type="PackedScene" uid="uid://cqsorrlaroety" path="res://player.tscn" id="2_0tbyp"]
 
 [node name="PlayScene" type="Node2D"]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-86, -122)
-texture = ExtResource("1_memhf")
-
-[node name="BIGSprite2D" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(-134, 92)
-scale = Vector2(2, 2)
-skew = 0.223402
-texture = ExtResource("1_memhf")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(201, -32)
-texture = ExtResource("1_memhf")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(-21, 127)
-texture = ExtResource("1_memhf")
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
-position = Vector2(-278, 210)
-
-[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -2)
