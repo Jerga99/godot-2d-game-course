@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=4 format=3 uid="uid://cupet4wimcgu0"]
 
+[ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Texture2D" uid="uid://bcrpavqvnlvde" path="res://icon.svg" id="1_memhf"]
 [ext_resource type="PackedScene" uid="uid://cqsorrlaroety" path="res://player.tscn" id="2_0tbyp"]
 
 [node name="PlayScene" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
 zoom = Vector2(5, 5)
+script = ExtResource("1_1p5oe")
+follow_target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
 speed = 100.0
