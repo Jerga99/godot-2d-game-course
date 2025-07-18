@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bao2nasbado03"]
+
+[ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://ability.gd" id="1_ny5vu"]
+[ext_resource type="Script" uid="uid://eej08vdcijx7" path="res://ability_component.gd" id="2_8ab1l"]
+
+[node name="Slash" type="Node"]
+script = ExtResource("1_ny5vu")
+
+[node name="SpawnObject" type="Node" parent="."]
+script = ExtResource("2_8ab1l")
+
+[node name="Pushback" type="Node" parent="."]
+script = ExtResource("2_8ab1l")

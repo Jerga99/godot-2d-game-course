@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=19 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://e0cjvd4lswu2" path="res://ability_controller.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://ability.gd" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://bao2nasbado03" path="res://slash_ability.tscn" id="4_sweqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -114,8 +115,7 @@ autoplay = "idle"
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("3_i3pqv")
 
-[node name="Slash" type="Node" parent="AbilityController"]
-script = ExtResource("4_hqtel")
+[node name="Slash" parent="AbilityController" instance=ExtResource("4_sweqy")]
 
 [node name="Fireball" type="Node" parent="AbilityController"]
 script = ExtResource("4_hqtel")
