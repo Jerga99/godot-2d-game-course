@@ -15,6 +15,10 @@ func _process(delta: float):
 func _handle_abilities():
 	if Input.is_action_just_pressed("ability_1"):
 		ability_controller.trigger_ability_by_idx(0)
+	if Input.is_action_just_pressed("ability_2"):
+		ability_controller.trigger_ability_by_idx(1)
+	if Input.is_action_just_pressed("ability_3"):
+		ability_controller.trigger_ability_by_idx(2)
 		
 func _handle_movemment(delta: float):
 	is_moving = false

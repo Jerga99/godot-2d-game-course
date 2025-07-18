@@ -116,3 +116,6 @@ script = ExtResource("3_i3pqv")
 
 [node name="Slash" type="Node" parent="AbilityController"]
 script = ExtResource("4_hqtel")
+
+[node name="Fireball" type="Node" parent="AbilityController"]
+script = ExtResource("4_hqtel")
