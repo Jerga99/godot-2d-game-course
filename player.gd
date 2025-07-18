@@ -13,7 +13,7 @@ func _process(delta: float):
 	_handle_animation()
 
 func _handle_abilities():
-	if Input.is_key_pressed(KEY_1):
+	if Input.is_action_just_pressed("ability_1"):
 		ability_controller.trigger_ability_by_idx(0)
 		
 func _handle_movemment(delta: float):
