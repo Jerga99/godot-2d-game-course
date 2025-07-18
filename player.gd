@@ -5,8 +5,18 @@ extends Node2D
 var is_moving: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ability_controller: AbilityController = $AbilityController
 	
 func _process(delta: float):
+	_handle_movemment(delta)
+	_handle_abilities()	
+	_handle_animation()
+
+func _handle_abilities():
+	if Input.is_key_pressed(KEY_1):
+		ability_controller.trigger_ability_by_idx(0)
+		
+func _handle_movemment(delta: float):
 	is_moving = false
 	var horizontal = Input.get_axis("left", "right")
 	var vertical = Input.get_axis("up", "down")
@@ -21,8 +31,6 @@ func _process(delta: float):
 			animated_sprite.flip_h = false
 		elif horizontal < 0:
 			animated_sprite.flip_h = true
-			
-	_handle_animation()
 			
 func _handle_animation():
 	if is_moving:
