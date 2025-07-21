@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://4pyr8i3tu5v3"]
+
+[ext_resource type="Texture2D" uid="uid://6h37ubfawceh" path="res://assets/Pixel Art Animations - Warrior (FREE)/VFX 4/sprite-sheet.png" id="1_ft43f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrkk7"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evnw6"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e26hf"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56rvc"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgyk6"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd5tj"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25xdg"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ncoi"]
+atlas = ExtResource("1_ft43f")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62pf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrkk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evnw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e26hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56rvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgyk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd5tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25xdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ncoi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SlashEffect" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_62pf0")
+autoplay = "default"
+frame_progress = 0.237775
