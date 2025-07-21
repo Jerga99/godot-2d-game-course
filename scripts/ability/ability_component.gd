@@ -1,9 +1,9 @@
 class_name AbilityComponent
 extends Node
 
-func activate():
+func activate(entity: Entity):
 	print("Activation component: ", self.name)
-	_activate()
+	_activate(entity)
 	
-func _activate():
+func _activate(entity: Entity):
 	pass

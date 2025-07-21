@@ -1,4 +1,4 @@
-extends Node2D
+extends Entity
 
 @export var speed: float = 20
 

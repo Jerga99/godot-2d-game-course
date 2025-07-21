@@ -3,8 +3,11 @@ extends Node
 
 var abilities: Array[Ability] = []
 var cooldowns: Dictionary = {}
+var entity: Entity
 
 func _ready():
+	entity = get_parent()
+	
 	for child in get_children():
 		if child is Ability:
 			abilities.push_back(child)
@@ -20,4 +23,4 @@ func _trigger_ability(ability: Ability):
 		print("Ability not found!")
 		return
 		
-	ability.activate()
+	ability.activate(entity)
