@@ -11,6 +11,7 @@ script = ExtResource("1_ny5vu")
 [node name="SpawnObject" type="Node" parent="."]
 script = ExtResource("2_lua37")
 object_scene = ExtResource("3_sy1op")
+set_as_child = true
 
 [node name="Pushback" type="Node" parent="."]
 script = ExtResource("2_8ab1l")
