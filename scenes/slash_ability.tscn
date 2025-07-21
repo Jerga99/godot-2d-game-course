@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bao2nasbado03"]
+[gd_scene load_steps=5 format=3 uid="uid://bao2nasbado03"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/ability.gd" id="1_ny5vu"]
 [ext_resource type="Script" uid="uid://eej08vdcijx7" path="res://scripts/ability/ability_component.gd" id="2_8ab1l"]
 [ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/spawn_object_ac.gd" id="2_lua37"]
+[ext_resource type="PackedScene" uid="uid://4pyr8i3tu5v3" path="res://scenes/slash_effect.tscn" id="3_sy1op"]
 
 [node name="Slash" type="Node"]
 script = ExtResource("1_ny5vu")
 
 [node name="SpawnObject" type="Node" parent="."]
 script = ExtResource("2_lua37")
+object_scene = ExtResource("3_sy1op")
 
 [node name="Pushback" type="Node" parent="."]
 script = ExtResource("2_8ab1l")

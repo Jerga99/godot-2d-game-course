@@ -61,14 +61,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3ncoi")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
 
 [node name="SlashEffect" type="Node2D"]
+z_index = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_62pf0")
 autoplay = "default"
-frame_progress = 0.237775
+frame = 7
+frame_progress = 1.0
