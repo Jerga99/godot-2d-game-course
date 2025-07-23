@@ -1,66 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://4pyr8i3tu5v3"]
+[gd_scene load_steps=8 format=3 uid="uid://4pyr8i3tu5v3"]
 
 [ext_resource type="Script" uid="uid://b5qqi1hu0cb5u" path="res://scripts/ability/manifest/slash_manifest.gd" id="1_61q06"]
-[ext_resource type="Texture2D" uid="uid://6h37ubfawceh" path="res://assets/Pixel Art Animations - Warrior (FREE)/VFX 4/sprite-sheet.png" id="2_t282r"]
+[ext_resource type="Texture2D" uid="uid://ce102avr85soj" path="res://assets/melee_slash_spritesheet.png" id="2_61q06"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrkk7"]
-atlas = ExtResource("2_t282r")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t282r"]
+atlas = ExtResource("2_61q06")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evnw6"]
-atlas = ExtResource("2_t282r")
-region = Rect2(128, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgeek"]
+atlas = ExtResource("2_61q06")
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e26hf"]
-atlas = ExtResource("2_t282r")
-region = Rect2(0, 128, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rco5l"]
+atlas = ExtResource("2_61q06")
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_56rvc"]
-atlas = ExtResource("2_t282r")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgyk6"]
-atlas = ExtResource("2_t282r")
-region = Rect2(0, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sd5tj"]
-atlas = ExtResource("2_t282r")
-region = Rect2(128, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_25xdg"]
-atlas = ExtResource("2_t282r")
-region = Rect2(0, 384, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ncoi"]
-atlas = ExtResource("2_t282r")
-region = Rect2(128, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8blv"]
+atlas = ExtResource("2_61q06")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_62pf0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hrkk7")
+"texture": SubResource("AtlasTexture_t282r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evnw6")
+"texture": SubResource("AtlasTexture_mgeek")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e26hf")
+"texture": SubResource("AtlasTexture_rco5l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_56rvc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vgyk6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sd5tj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_25xdg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ncoi")
+"texture": SubResource("AtlasTexture_m8blv")
 }],
 "loop": false,
 "name": &"default",
@@ -72,7 +44,8 @@ z_index = 100
 script = ExtResource("1_61q06")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_62pf0")
 autoplay = "default"
-frame = 7
+frame = 3
 frame_progress = 1.0
