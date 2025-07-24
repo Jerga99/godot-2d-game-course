@@ -42,6 +42,7 @@ animations = [{
 [node name="SlashAbilityManifest" type="Node2D"]
 z_index = 100
 script = ExtResource("1_61q06")
+rotation_offset = -115.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

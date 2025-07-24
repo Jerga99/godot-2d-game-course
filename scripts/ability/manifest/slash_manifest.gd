@@ -1,6 +1,8 @@
 class_name SlashManifest
 extends AbilityManifest
 
+@export var rotation_offset: float = 45.0
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 static var alternate_slash: bool = true
@@ -15,12 +17,36 @@ func _activate(context: AbilityContext):
 	var weapon = context.caster.get_node("Weapon") as Node2D
 	
 	if weapon != null:
-		var base_angle = (mouse_pos - weapon.global_position).angle()
-		weapon.rotation = base_angle + PI / 2
+		var base_angle = (mouse_pos - context.caster.global_position).angle()
+		var offset_rad = deg_to_rad(rotation_offset)
+		
+		var weapon_angle = base_angle + offset_rad
+		var weapon_direction = Vector2(cos(weapon_angle), sin(weapon_angle))
+		
+		weapon.global_position  = context.caster.global_position + weapon_direction * 15.0
+		weapon.rotation = weapon_angle + PI / 2
 			
 func _process(delta):
 	if animated_sprite.frame_progress >= 1.0:
 		queue_free()
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
