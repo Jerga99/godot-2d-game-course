@@ -108,8 +108,9 @@ animations = [{
 atlas = ExtResource("6_tuyoq")
 region = Rect2(69, 0, 7, 16)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_onrkg")
+weapon = NodePath("Weapon")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -125,7 +126,7 @@ script = ExtResource("3_i3pqv")
 [node name="Fireball" type="Node" parent="AbilityController"]
 script = ExtResource("4_hqtel")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Weapon" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
 position = Vector2(8, 0)
