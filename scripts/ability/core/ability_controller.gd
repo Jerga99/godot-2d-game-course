@@ -22,5 +22,5 @@ func _trigger_ability(ability: Ability):
 	if ability == null:
 		print("Ability not found!")
 		return
-		
+
 	ability.activate(entity)

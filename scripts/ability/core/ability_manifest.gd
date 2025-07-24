@@ -1,8 +1,8 @@
 class_name AbilityManifest
 extends Node2D
 
-func activate(entity: Entity):
-	_activate(entity)
+func activate(context: AbilityContext):
+	_activate(context)
 	
-func _activate(entity: Entity):
+func _activate(context: AbilityContext):
 	pass

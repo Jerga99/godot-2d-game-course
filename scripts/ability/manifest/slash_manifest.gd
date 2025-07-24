@@ -5,7 +5,7 @@ extends AbilityManifest
 
 static var alternate_slash: bool = true
 
-func _activate(entity: Entity):
+func _activate(context: AbilityContext):
 	var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
 	look_at(mouse_pos)
 	
