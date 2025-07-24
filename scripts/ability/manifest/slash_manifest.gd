@@ -20,6 +20,9 @@ func _activate(context: AbilityContext):
 		var base_angle = (mouse_pos - context.caster.global_position).angle()
 		var offset_rad = deg_to_rad(rotation_offset)
 		
+		if alternate_slash:
+			offset_rad = -offset_rad
+		
 		var weapon_angle = base_angle + offset_rad
 		var weapon_direction = Vector2(cos(weapon_angle), sin(weapon_angle))
 		
