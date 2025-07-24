@@ -11,8 +11,25 @@ func _activate(context: AbilityContext):
 	
 	alternate_slash = not alternate_slash
 	animated_sprite.flip_v = alternate_slash
-
+	
+	var weapon = context.caster.get_node("Weapon") as Node2D
+	
+	if weapon != null:
+		var base_angle = (mouse_pos - weapon.global_position).angle()
+		weapon.rotation = base_angle + PI / 2
+			
 func _process(delta):
 	if animated_sprite.frame_progress >= 1.0:
 		queue_free()
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		

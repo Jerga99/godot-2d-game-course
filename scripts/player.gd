@@ -40,12 +40,12 @@ func _handle_movemment(delta: float):
 		is_moving = true
 		if horizontal > 0:
 			animated_sprite.flip_h = false
-			weapon.position = weapon_right
-			weapon.rotation = deg_to_rad(35)
+			#weapon.position = weapon_right
+			#weapon.rotation = deg_to_rad(35)
 		elif horizontal < 0:
 			animated_sprite.flip_h = true
-			weapon.position = weapon_left
-			weapon.rotation = deg_to_rad(-35)
+			#weapon.position = weapon_left
+			#weapon.rotation = deg_to_rad(-35)
 			
 func _handle_animation():
 	if is_moving:
