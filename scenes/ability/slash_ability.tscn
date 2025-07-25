@@ -7,6 +7,7 @@
 
 [node name="SlashAbility" type="Node"]
 script = ExtResource("1_wqbl1")
+cooldown = 0.5
 
 [node name="SpawnManifest" type="Node" parent="."]
 script = ExtResource("2_6scyu")

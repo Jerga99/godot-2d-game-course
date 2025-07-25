@@ -11,6 +11,12 @@ func _ready():
 	for child in get_children():
 		if child is Ability:
 			abilities.push_back(child)
+			
+func _process(delta: float):
+	for ability in cooldowns.keys():
+		if cooldowns[ability] > 0.0:
+			var cooldown = max(0.0, cooldowns[ability] - delta)
+			cooldowns[ability] = cooldown		
 
 func trigger_ability_by_idx(idx: int):
 	if abilities.size() == 0: return
