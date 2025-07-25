@@ -1,6 +1,8 @@
 class_name Ability
 extends Node
 
+@export var cooldown: float = 2.0
+
 func activate(entity: Entity):
 	var context = AbilityContext.new(entity, self)
 	

@@ -22,5 +22,24 @@ func _trigger_ability(ability: Ability):
 	if ability == null:
 		print("Ability not found!")
 		return
-
+		
+	if cooldowns.get(ability, 0.0) > 0.0:
+		print(ability.name + " is on cooldown!")
+		return
+ 
 	ability.activate(entity)
+	cooldowns[ability] = ability.cooldown
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
