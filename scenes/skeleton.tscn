@@ -148,6 +148,7 @@ z_index = 100
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_txkty")
 speed = 20.0
+stop_distance = 15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

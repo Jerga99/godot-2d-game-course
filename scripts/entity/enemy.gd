@@ -7,6 +7,7 @@ var current_speed: float
 var last_position
 
 @export var speed: float = 10.0
+@export var stop_distance: float = 10.0
 
 func _ready():
 	super._ready()
@@ -17,10 +18,9 @@ func _ready():
 func _process(delta: float):
 	if player != null:
 		var dir = (player.position - self.position).normalized()
-		position += dir * speed * delta
 		
-		if position.distance_to(player.position) < 0.1:
-			position = player.position
+		if position.distance_to(player.position) > stop_distance:
+			position += dir * speed * delta
 		
 		velocity = (position - last_position) / delta
 		current_speed = velocity.length()
