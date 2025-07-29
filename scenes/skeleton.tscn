@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqngy6tky4lra"]
+[gd_scene load_steps=23 format=3 uid="uid://cqngy6tky4lra"]
 
 [ext_resource type="Script" uid="uid://c287ibr3ofedg" path="res://scripts/entity/enemy.gd" id="1_txkty"]
 [ext_resource type="Texture2D" uid="uid://dnrt755loii3p" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Idle.png" id="2_txkty"]
+[ext_resource type="Texture2D" uid="uid://vostqpgbkb6q" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Walk.png" id="3_ivqcw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrus2"]
 atlas = ExtResource("2_txkty")
@@ -35,6 +36,46 @@ region = Rect2(576, 0, 96, 64)
 atlas = ExtResource("2_txkty")
 region = Rect2(672, 0, 96, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnirc"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pgwy"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssl1b"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4hcs"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haw2w"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0f3v"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhqa"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iffn"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67pwj"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnc0r"]
+atlas = ExtResource("3_ivqcw")
+region = Rect2(864, 0, 96, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrus2"]
 animations = [{
 "frames": [{
@@ -65,6 +106,41 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnirc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pgwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssl1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4hcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haw2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0f3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iffn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67pwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnc0r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
 }]
 
 [node name="Skeleton" type="Node2D"]
@@ -76,5 +152,6 @@ speed = 20.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrus2")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.150203

@@ -8,7 +8,6 @@ var is_moving: bool = false
 var weapon_right: Vector2
 var weapon_left: Vector2
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ability_controller: AbilityController = $AbilityController
 
 func _ready():
