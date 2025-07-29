@@ -1,3 +1,4 @@
+class_name Player
 extends Entity
 
 @export var speed: float = 20
@@ -11,6 +12,8 @@ var weapon_left: Vector2
 @onready var ability_controller: AbilityController = $AbilityController
 
 func _ready():
+	super._ready()
+	add_to_group("player")
 	weapon_right = weapon.position
 	weapon_left = self.position + (self.position - weapon.position)
 	
