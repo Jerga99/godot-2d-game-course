@@ -17,12 +17,16 @@ func _ready():
 func _process(delta: float):
 	if player != null:
 		var dir = (player.position - self.position).normalized()
-		self.position += dir * speed * delta
+		position += dir * speed * delta
+		
+		if position.distance_to(player.position) < 0.1:
+			position = player.position
+		
+		velocity = (position - last_position) / delta
+		current_speed = velocity.length()
+		_face_target(dir)
 	
-	velocity = (position - last_position) / delta
-	current_speed = velocity.length()
 	last_position = position
-	
 	_handle_animations()
 
 
@@ -31,6 +35,12 @@ func _handle_animations():
 		animated_sprite.play("idle")
 	else:
 		animated_sprite.play("walk")
+		
+func _face_target(dir: Vector2):
+	if not animated_sprite.flip_h and dir.x < 0:
+		animated_sprite.flip_h = true
+	elif animated_sprite.flip_h and dir.x > 0:
+		animated_sprite.flip_h = false
 	
 	
 	
