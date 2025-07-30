@@ -30,7 +30,7 @@ func _trigger_ability(ability: Ability):
 		return
 		
 	if cooldowns.get(ability, 0.0) > 0.0:
-		print(ability.name + " is on cooldown!")
+		#print(ability.name + " is on cooldown!")
 		return
  
 	ability.activate(entity)
