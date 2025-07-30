@@ -31,14 +31,14 @@ func _process(delta: float):
 		_face_target(dir)
 	
 	last_position = position
-	#_handle_animations()
+	_handle_animations()
 
 
 func _handle_animations():
 	if current_speed <= 0:
-		animated_sprite.play("idle")
+		play_animation(AnimationWrapper.new("idle"))
 	else:
-		animated_sprite.play("walk")
+		play_animation(AnimationWrapper.new("walk"))
 		
 func _face_target(dir: Vector2):
 	if not animated_sprite.flip_h and dir.x < 0:

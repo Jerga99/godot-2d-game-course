@@ -51,9 +51,10 @@ func _handle_movemment(delta: float):
 			
 func _handle_animation():
 	if is_moving:
-		animated_sprite.play("run")
+		play_animation(AnimationWrapper.new("run"))
 	else:
-		animated_sprite.play("idle")
+		play_animation(AnimationWrapper.new("idle"))
+		
 	
 	
 	

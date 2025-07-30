@@ -4,6 +4,6 @@ extends RefCounted
 var caster: Entity
 var ability: Ability
 
-func _init(caster: Entity, ability: Ability):
-	self.caster = caster
-	self.ability = ability
+func _init(_caster: Entity, _ability: Ability):
+	self.caster = _caster
+	self.ability = _ability

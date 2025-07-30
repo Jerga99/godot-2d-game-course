@@ -6,5 +6,5 @@ extends Node2D
 func _ready():
 	pass
 	
-func play_animation(anim_name: String):
-	animated_sprite.play(anim_name)
+func play_animation(anim: AnimationWrapper):
+	animated_sprite.play(anim.name)
