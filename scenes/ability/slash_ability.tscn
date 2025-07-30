@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bao2nasbado03"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_wqbl1"]
-[ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/core/ability_spawn_manifest.gd" id="2_6scyu"]
+[ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/component/ability_spawn_manifest.gd" id="2_6scyu"]
 [ext_resource type="PackedScene" uid="uid://4pyr8i3tu5v3" path="res://scenes/ability/slash_ability_manifest.tscn" id="3_jabok"]
 [ext_resource type="Script" uid="uid://eej08vdcijx7" path="res://scripts/ability/core/ability_component.gd" id="4_ny4m0"]
 

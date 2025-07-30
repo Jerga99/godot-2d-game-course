@@ -1,8 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqngy6tky4lra"]
+[gd_scene load_steps=36 format=3 uid="uid://cqngy6tky4lra"]
 
 [ext_resource type="Script" uid="uid://c287ibr3ofedg" path="res://scripts/entity/enemy.gd" id="1_txkty"]
 [ext_resource type="Texture2D" uid="uid://dnrt755loii3p" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Idle.png" id="2_txkty"]
 [ext_resource type="Texture2D" uid="uid://vostqpgbkb6q" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Walk.png" id="3_ivqcw"]
+[ext_resource type="Texture2D" uid="uid://dwejhlhsqk6f6" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Attack1.png" id="3_ssl1b"]
+[ext_resource type="Script" uid="uid://e0cjvd4lswu2" path="res://scripts/ability/core/ability_controller.gd" id="5_w4hcs"]
+[ext_resource type="PackedScene" uid="uid://ls38l45jp8fo" path="res://scenes/ability/skeleton_slash.tscn" id="6_haw2w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrus2"]
 atlas = ExtResource("2_txkty")
@@ -35,6 +38,46 @@ region = Rect2(576, 0, 96, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6rpr"]
 atlas = ExtResource("2_txkty")
 region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l18t7"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdbwx"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbj4"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i84ui"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulcnj"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjqjo"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l6in"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bogq3"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1nps"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05nho"]
+atlas = ExtResource("3_ssl1b")
+region = Rect2(864, 0, 96, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnirc"]
 atlas = ExtResource("3_ivqcw")
@@ -109,6 +152,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_l18t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdbwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdbj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i84ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulcnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjqjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l6in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bogq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1nps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05nho")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bnirc")
 }, {
 "duration": 1.0,
@@ -153,6 +231,12 @@ stop_distance = 15.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrus2")
-animation = &"walk"
+animation = &"slash"
 autoplay = "idle"
-frame_progress = 0.150203
+frame_progress = 0.846366
+
+[node name="AbilityController" type="Node" parent="."]
+script = ExtResource("5_w4hcs")
+metadata/_custom_type_script = "uid://e0cjvd4lswu2"
+
+[node name="SkeletonSlash" parent="AbilityController" instance=ExtResource("6_haw2w")]
