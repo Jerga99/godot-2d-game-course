@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ls38l45jp8fo"]
+[gd_scene load_steps=5 format=3 uid="uid://ls38l45jp8fo"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_4expr"]
 [ext_resource type="Script" uid="uid://b1iiu0se16o0n" path="res://scripts/ability/component/ability_animation_runner.gd" id="2_veguy"]
+[ext_resource type="Script" uid="uid://d1esvyncdx5pj" path="res://scripts/ability/component/ability_target_player.gd" id="3_ng5uy"]
+[ext_resource type="Script" uid="uid://bgc4ieq2gc1ey" path="res://scripts/ability/component/ability_deal_damage.gd" id="4_jboct"]
 
 [node name="SkeletonSlash" type="Node2D"]
 script = ExtResource("1_4expr")
@@ -9,3 +11,11 @@ script = ExtResource("1_4expr")
 [node name="AbilityAnimationRunner" type="Node" parent="."]
 script = ExtResource("2_veguy")
 metadata/_custom_type_script = "uid://b1iiu0se16o0n"
+
+[node name="AbilityTargetPlayer" type="Node" parent="."]
+script = ExtResource("3_ng5uy")
+metadata/_custom_type_script = "uid://d1esvyncdx5pj"
+
+[node name="AbilityDealDamage" type="Node" parent="."]
+script = ExtResource("4_jboct")
+metadata/_custom_type_script = "uid://bgc4ieq2gc1ey"
