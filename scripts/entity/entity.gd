@@ -21,6 +21,7 @@ func apply_damage(damage: float):
 	
 	current_health -=damage
 	current_health = max(0, current_health)
+	show_damage_taken_effect()
 	
 	if current_health == 0:
 		print(name, " is dead!")
@@ -39,6 +40,28 @@ func play_animation(anim: AnimationWrapper):
 	
 func on_animation_finished():
 	current_anim = null
+	
+	
+func show_damage_taken_effect(): pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

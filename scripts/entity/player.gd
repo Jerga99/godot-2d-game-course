@@ -55,6 +55,9 @@ func _handle_animation():
 	else:
 		play_animation(AnimationWrapper.new("idle"))
 		
+func show_damage_taken_effect():
+	print("Show player damage taken effect")
+		
 	
 	
 	
