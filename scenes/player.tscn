@@ -111,7 +111,7 @@ region = Rect2(69, 0, 7, 16)
 [node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_onrkg")
 weapon = NodePath("Weapon")
-max_health = 100.0
+max_health = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

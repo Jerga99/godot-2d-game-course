@@ -5,6 +5,7 @@ extends Node2D
 
 var current_anim: AnimationWrapper
 var current_health: float
+var is_dead: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -16,7 +17,14 @@ func _exit_tree():
 	animated_sprite.animation_finished.disconnect(on_animation_finished)
 	
 func apply_damage(damage: float):
-	print(self.name, " takes ", damage, " damage")
+	if is_dead: return
+	
+	current_health -=damage
+	current_health = max(0, current_health)
+	
+	if current_health == 0:
+		print(name, " is dead!")
+		is_dead = true
 	
 func play_animation(anim: AnimationWrapper):
 	if animated_sprite.animation == anim.name: return
