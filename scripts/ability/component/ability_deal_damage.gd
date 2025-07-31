@@ -4,4 +4,5 @@ extends AbilityComponent
 @export var damage: float = 10.0
 
 func _activate(context: AbilityContext):
-	print("Deal damage: ", damage)
+	if context.target != null:
+		print("Deal damage to: ", context.target.name)

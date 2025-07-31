@@ -2,4 +2,5 @@ class_name AbilityTargetPlayer
 extends AbilityComponent
 
 func _activate(context: AbilityContext):
-	print("Target player")
+	var player = get_tree().get_first_node_in_group("player")
+	context.target = player
