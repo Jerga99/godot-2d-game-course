@@ -18,4 +18,5 @@ metadata/_custom_type_script = "uid://d1esvyncdx5pj"
 
 [node name="AbilityDealDamage" type="Node" parent="."]
 script = ExtResource("4_jboct")
+exec_delay = 0.5
 metadata/_custom_type_script = "uid://bgc4ieq2gc1ey"
