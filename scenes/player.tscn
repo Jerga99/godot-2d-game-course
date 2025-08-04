@@ -10,6 +10,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smehm"]
 shader = ExtResource("2_fjrip")
+shader_parameter/hurt_color = Vector4(1, 1, 1, 1)
+shader_parameter/is_hurt = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
