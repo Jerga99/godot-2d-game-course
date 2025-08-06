@@ -18,3 +18,24 @@ func show_damage_text(damage: String, spawn_pos: Vector2, color: Color):
 	label.position = spawn_pos - spawn_offset
 	label.position.x += x_offset
 	
+	var tween = create_tween()
+	
+	tween.tween_property(label, "position:x", label.position.x + 40, 2)
+	tween.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel()
+	tween.tween_property(label, "position:y", label.position.y + -30, 1.5)
+	tween.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		
+	await tween.finished
+	label.queue_free()
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
