@@ -119,7 +119,7 @@ sources/0 = SubResource("TileSetAtlasSource_5xdee")
 [node name="PlayScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
-zoom = Vector2(5, 5)
+zoom = Vector2(6, 6)
 script = ExtResource("1_1p5oe")
 follow_target = NodePath("../Player")
 

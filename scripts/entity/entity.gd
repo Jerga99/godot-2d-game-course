@@ -43,7 +43,7 @@ func on_animation_finished():
 	current_anim = null
 
 func _show_damage_popup(damage: float):
-	FloatText.show_damage_text(str(damage))
+	FloatText.show_damage_text(str(damage), position, Color.FIREBRICK)
 	
 func _show_damage_taken_effect(): pass
 	
