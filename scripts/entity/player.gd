@@ -55,7 +55,7 @@ func _handle_animation():
 	else:
 		play_animation(AnimationWrapper.new("idle"))
 		
-func show_damage_taken_effect():
+func _show_damage_taken_effect():
 	if animated_sprite.material != null:
 		for i in 2:
 			animated_sprite.material.set_shader_parameter("is_hurt", true)
