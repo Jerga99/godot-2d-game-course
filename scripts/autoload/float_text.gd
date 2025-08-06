@@ -1,13 +1,16 @@
 extends Node
 
+@onready var damage_font = preload("res://resources/damage_font.tres")
+
 func show_damage_text(damage: String, spawn_pos: Vector2, color: Color):
 	var label = Label.new()
 	label.text = damage
 	label.z_index = 1000
-	
+	label.scale = Vector2(0.14, 0.14)
 	label.label_settings = LabelSettings.new()
+	label.label_settings.font = damage_font
 	label.label_settings.font_color = color
-	label.label_settings.font_size = 18
+	label.label_settings.font_size = 100
 	label.label_settings.outline_color = "#000"
 	label.label_settings.outline_size = 1
 	

@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://doceu6o265h14"]
+
+[ext_resource type="FontFile" uid="uid://bjmtk4qd7ldbk" path="res://assets/Minecraft.ttf" id="1_yejfp"]
+
+[resource]
+base_font = ExtResource("1_yejfp")
