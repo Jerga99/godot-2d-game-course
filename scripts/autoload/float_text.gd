@@ -17,14 +17,17 @@ func show_damage_text(damage: String, spawn_pos: Vector2, color: Color):
 	var spawn_offset = label.size / 2
 	label.position = spawn_pos - spawn_offset
 	label.position.x += x_offset
+	label.pivot_offset = label.size / 2
 	
 	var tween = create_tween()
 	
-	tween.tween_property(label, "position:x", label.position.x + 40, 2)
+	tween.tween_property(label, "position:x", label.position.x + x_offset, 0.35)
 	tween.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel()
-	tween.tween_property(label, "position:y", label.position.y + -30, 1.5)
+	tween.tween_property(label, "position:y", label.position.y - 10, 0.30)
 	tween.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel()
+	tween.tween_property(label, "scale", Vector2.ZERO, 0.40).set_ease(Tween.EASE_IN)
 		
 	await tween.finished
 	label.queue_free()
