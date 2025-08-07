@@ -6,10 +6,13 @@ extends AbilityComponent
 @export var frequency = 3
 
 var push_back_counter = 0
+var last_activation_time = -1
 
 func _activate(context: AbilityContext):
-	push_back_counter += 1
+	if Time.get_ticks_msec() - last_activation_time > 1000:
+		push_back_counter = 0
 	
+	push_back_counter += 1
 	if push_back_counter == frequency:
 		push_back_counter = 0
 		var caster = context.caster
@@ -22,3 +25,5 @@ func _activate(context: AbilityContext):
 		var tween = create_tween()
 		tween.tween_property(caster, "position", target_pos, duration)
 		tween.set_ease(Tween.EASE_OUT)
+		
+	last_activation_time = Time.get_ticks_msec()
