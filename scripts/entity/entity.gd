@@ -6,6 +6,7 @@ extends Node2D
 var current_anim: AnimationWrapper
 var current_health: float
 var is_dead: bool = false
+var turning_cooldown = 0.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

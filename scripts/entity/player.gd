@@ -31,6 +31,7 @@ func _handle_abilities():
 		
 func _handle_movemment(delta: float):
 	is_moving = false
+	turning_cooldown = max(0, turning_cooldown - delta)
 	var horizontal = Input.get_axis("left", "right")
 	var vertical = Input.get_axis("up", "down")
 	
@@ -40,14 +41,11 @@ func _handle_movemment(delta: float):
 	
 	if n_movement.length() > 0:
 		is_moving = true
-		if horizontal > 0:
-			animated_sprite.flip_h = false
-			#weapon.position = weapon_right
-			#weapon.rotation = deg_to_rad(35)
-		elif horizontal < 0:
-			animated_sprite.flip_h = true
-			#weapon.position = weapon_left
-			#weapon.rotation = deg_to_rad(-35)
+		if turning_cooldown == 0:
+			if horizontal > 0:
+				animated_sprite.flip_h = false
+			elif horizontal < 0:
+				animated_sprite.flip_h = true
 			
 func _handle_animation():
 	if is_moving:
