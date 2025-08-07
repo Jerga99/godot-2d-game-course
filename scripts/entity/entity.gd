@@ -47,7 +47,7 @@ func _show_damage_popup(damage: float):
 	var frame_tex = animated_sprite.sprite_frames.get_frame_texture(anim, 0)
 	var height = frame_tex.get_height()
 	var spawn_position = Vector2(position.x, position.y - (height * 0.5))
-	FloatText.show_damage_text(str(damage), spawn_position, Color.FIREBRICK)
+	FloatText.show_damage_text(str(int(damage)), spawn_position, Color.FIREBRICK)
 	
 func _show_damage_taken_effect(): pass
 	
