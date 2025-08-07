@@ -39,6 +39,12 @@ func play_animation(anim: AnimationWrapper):
 	current_anim = anim
 	animated_sprite.play(anim.name)
 	
+func turn_to_position(pos: Vector2):
+	if position.x > pos.x and not animated_sprite.flip_h:
+		animated_sprite.flip_h = true
+	elif position.x < pos.x and animated_sprite.flip_h:
+		animated_sprite.flip_h = false
+	
 func on_animation_finished():
 	current_anim = null
 
