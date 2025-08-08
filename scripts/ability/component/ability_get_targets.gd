@@ -1,14 +1,12 @@
 
-class_name AbilityGetTarget
+class_name AbilityGetTargets
 extends AbilityComponent
 
 @export var radius = 30.0
 
 func _activate(context: AbilityContext):
 	var targets = check_colliders_around_position(context.caster, radius)
-	
-	if targets.size() > 0:
-		context.target = targets[0]
+	context.targets = targets
 	
 func check_colliders_around_position(caster: Entity, radius: float) -> Array[Entity]:
 	var shape = CircleShape2D.new()

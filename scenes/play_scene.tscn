@@ -149,3 +149,12 @@ tile_set = SubResource("TileSet_e6jdp")
 
 [node name="Skeleton" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-86, -19)
+
+[node name="Skeleton2" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-48, -74)
+
+[node name="Skeleton3" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(9, -78)
+
+[node name="Skeleton4" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(68, -59)

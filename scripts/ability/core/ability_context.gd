@@ -3,13 +3,14 @@ extends RefCounted
 
 var caster: Entity
 var ability: Ability
-var target: Variant = null
+var targets: Array[Variant] = []
 
 func _init(_caster: Entity, _ability: Ability):
 	self.caster = _caster
 	self.ability = _ability
 	
-func get_target_position() -> Vector2:
+func get_target_position(idx: int) -> Vector2:
+	var target = targets[idx]
 	if target is Entity:
 		return target.global_position
 	elif target is Vector2:
