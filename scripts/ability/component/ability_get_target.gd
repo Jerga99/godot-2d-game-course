@@ -5,10 +5,12 @@ extends AbilityComponent
 @export var radius = 30.0
 
 func _activate(context: AbilityContext):
-	var results = check_colliders_around_position(context.caster, radius)
-	print(results)
+	var targets = check_colliders_around_position(context.caster, radius)
 	
-func check_colliders_around_position(caster: Entity, radius: float) -> Array:
+	if targets.size() > 0:
+		context.target = targets[0]
+	
+func check_colliders_around_position(caster: Entity, radius: float) -> Array[Entity]:
 	var shape = CircleShape2D.new()
 	shape.radius = radius
 	
@@ -19,6 +21,25 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array:
 	
 	var space_state = caster.get_world_2d().direct_space_state
 	var results = space_state.intersect_shape(query)
+	var targets: Array[Entity] = []
 	
-	return results
+	if results.size() > 0:
+		for result in results:
+			var collider = result.collider
+			var parent = collider.get_parent()
+			
+			if parent is Entity:
+				targets.push_back(parent)
+	
+	return targets
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
