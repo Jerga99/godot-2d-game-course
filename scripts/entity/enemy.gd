@@ -10,6 +10,7 @@ var current_speed: float
 var last_position
 
 @onready var ability_controller: AbilityController = $AbilityController
+@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 
 func _ready():
 	super._ready()
@@ -45,6 +46,13 @@ func _face_target(dir: Vector2):
 		animated_sprite.flip_h = true
 	elif animated_sprite.flip_h and dir.x > 0:
 		animated_sprite.flip_h = false
+		
+func get_height() -> float:
+	if collision_shape != null:
+		var shape = collision_shape.shape as CapsuleShape2D
+		return shape.height
+	else:
+		return super.get_height()
 	
 	
 	

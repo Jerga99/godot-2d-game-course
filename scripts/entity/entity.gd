@@ -2,6 +2,7 @@ class_name Entity
 extends Node2D
 
 @export var max_health: float = 50
+@export var damage_text_color: Color = Color.FIREBRICK
 
 var current_anim: AnimationWrapper
 var current_health: float
@@ -49,13 +50,17 @@ func turn_to_position(pos: Vector2):
 	
 func on_animation_finished():
 	current_anim = null
-
-func _show_damage_popup(damage: float):
+	
+func get_height() -> float:
 	var anim = animated_sprite.animation
 	var frame_tex = animated_sprite.sprite_frames.get_frame_texture(anim, 0)
 	var height = frame_tex.get_height()
+	return height
+
+func _show_damage_popup(damage: float):
+	var height = get_height()
 	var spawn_position = Vector2(position.x, position.y - (height * 0.5))
-	FloatText.show_damage_text(str(int(damage)), spawn_position, Color.FIREBRICK)
+	FloatText.show_damage_text(str(int(damage)), spawn_position, damage_text_color)
 	
 func _show_damage_taken_effect():
 	if animated_sprite.material != null:

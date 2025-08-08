@@ -149,4 +149,3 @@ tile_set = SubResource("TileSet_e6jdp")
 
 [node name="Skeleton" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-86, -19)
-max_health = 100.0
