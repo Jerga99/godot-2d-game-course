@@ -50,7 +50,7 @@ func _face_target(dir: Vector2):
 func get_height() -> float:
 	if collision_shape != null:
 		var shape = collision_shape.shape as CapsuleShape2D
-		return shape.height
+		return shape.height * scale.y
 	else:
 		return super.get_height()
 	

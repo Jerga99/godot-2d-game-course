@@ -228,8 +228,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssl1b"]
-radius = 10.0
-height = 50.0
+height = 42.5
 
 [node name="Skeleton" type="Node2D"]
 z_index = 100
