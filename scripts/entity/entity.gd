@@ -12,6 +12,7 @@ var turning_cooldown = 0.0
 
 func _ready():
 	current_health = max_health
+	animated_sprite.material = animated_sprite.material.duplicate()
 	animated_sprite.animation_finished.connect(on_animation_finished)
 	
 func _exit_tree():
@@ -56,7 +57,13 @@ func _show_damage_popup(damage: float):
 	var spawn_position = Vector2(position.x, position.y - (height * 0.5))
 	FloatText.show_damage_text(str(int(damage)), spawn_position, Color.FIREBRICK)
 	
-func _show_damage_taken_effect(): pass
+func _show_damage_taken_effect():
+	if animated_sprite.material != null:
+		for i in 2:
+			animated_sprite.material.set_shader_parameter("is_hurt", true)
+			await get_tree().create_timer(0.05).timeout
+			animated_sprite.material.set_shader_parameter("is_hurt", false)
+			await get_tree().create_timer(0.05).timeout
 	
 	
 	
