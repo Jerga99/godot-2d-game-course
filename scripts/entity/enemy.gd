@@ -19,6 +19,8 @@ func _ready():
 	
 	
 func _process(delta: float):
+	if is_dead: return
+	
 	if player != null:
 		var dir = (player.position - self.position).normalized()
 		
@@ -54,15 +56,7 @@ func get_height() -> float:
 	else:
 		return super.get_height()
 	
+func _on_animated_sprite_2d_animation_finished():
+	if current_anim.name == "die":
+		queue_free()
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		

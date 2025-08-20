@@ -30,6 +30,7 @@ func apply_damage(damage: float):
 	if current_health == 0:
 		print(name, " is dead!")
 		is_dead = true
+		play_animation(AnimationWrapper.new("die", true))
 	
 func play_animation(anim: AnimationWrapper):
 	if animated_sprite.animation == anim.name: return
