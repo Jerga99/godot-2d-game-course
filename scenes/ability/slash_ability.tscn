@@ -28,6 +28,7 @@ metadata/_custom_type_script = "uid://dlv7h3h01wgu3"
 
 [node name="AbilityGetTargets" type="Node" parent="."]
 script = ExtResource("6_jabok")
+radius = 20.0
 exec_delay = 0.2
 metadata/_custom_type_script = "uid://b8xa52gceh2ci"
 

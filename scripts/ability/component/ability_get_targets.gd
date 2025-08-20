@@ -12,13 +12,17 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 	var shape = CircleShape2D.new()
 	shape.radius = radius
 	
+	var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
+	var dir_to_mouse = (mouse_pos - caster.position).normalized() * radius
+	
 	var query = PhysicsShapeQueryParameters2D.new()
 	query.shape = shape
-	query.transform.origin = caster.position
+	query.transform.origin = caster.position + dir_to_mouse
 	query.collide_with_areas = true
 	
 	var line = create_debug_circle(radius)
-	caster.add_child(line)	
+	caster.add_child(line)
+	line.position += dir_to_mouse
 
 	var space_state = caster.get_world_2d().direct_space_state
 	var results = space_state.intersect_shape(query)
