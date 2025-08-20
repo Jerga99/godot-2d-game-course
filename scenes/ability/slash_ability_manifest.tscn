@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 13.0
 }]
 
 [node name="SlashAbilityManifest" type="Node2D"]
