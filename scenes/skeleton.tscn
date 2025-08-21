@@ -340,10 +340,8 @@ damage_text_color = Color(1, 1, 1, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_haw2w")
 sprite_frames = SubResource("SpriteFrames_xrus2")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
-frame = 12
-frame_progress = 1.0
 
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("5_w4hcs")
