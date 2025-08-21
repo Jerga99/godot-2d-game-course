@@ -7,6 +7,7 @@ extends Entity
 var is_moving: bool = false
 var weapon_right: Vector2
 var weapon_left: Vector2
+var spawn_location: Vector2
 
 @onready var ability_controller: AbilityController = $AbilityController
 
@@ -15,6 +16,7 @@ func _ready():
 	add_to_group("player")
 	weapon_right = weapon.position
 	weapon_left = self.position + (self.position - weapon.position)
+	spawn_location = position
 	
 func _process(delta: float):
 	if is_dead: return
@@ -56,17 +58,7 @@ func _handle_animation():
 		play_animation(AnimationWrapper.new("idle"))
 		
 
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+func _on_animated_sprite_2d_animation_finished():
+	if current_anim.name == "die":
+		var scene = get_parent() as PlayScene
+		scene.handle_game_over(self)

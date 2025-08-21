@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=14 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
+[ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
 [ext_resource type="PackedScene" uid="uid://cqsorrlaroety" path="res://scenes/player.tscn" id="2_0tbyp"]
 [ext_resource type="Texture2D" uid="uid://bnlr33jwv2tkg" path="res://assets/Cute_Fantasy_Free 2/Tiles/Cliff_Tile.png" id="3_1p5oe"]
 [ext_resource type="Texture2D" uid="uid://ono105s4oo6f" path="res://assets/Cute_Fantasy_Free 2/Tiles/Path_Tile.png" id="4_5i074"]
@@ -117,6 +118,7 @@ texture = ExtResource("5_5uqcj")
 sources/0 = SubResource("TileSetAtlasSource_5xdee")
 
 [node name="PlayScene" type="Node2D"]
+script = ExtResource("1_btd5q")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
 zoom = Vector2(6, 6)
@@ -125,6 +127,7 @@ follow_target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
 z_index = 100
+position = Vector2(42, -61)
 speed = 100.0
 max_health = 10.0
 
