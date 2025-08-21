@@ -33,7 +33,7 @@ exec_delay = 0.2
 
 [node name="AbilityGetTargets" type="Node" parent="DealDamageGroup"]
 script = ExtResource("6_jabok")
-radius = 20.0
+radius = 25.0
 metadata/_custom_type_script = "uid://b8xa52gceh2ci"
 
 [node name="AbilityDealDamage" type="Node" parent="DealDamageGroup"]
