@@ -117,8 +117,9 @@ texture = ExtResource("5_5uqcj")
 [sub_resource type="TileSet" id="TileSet_e6jdp"]
 sources/0 = SubResource("TileSetAtlasSource_5xdee")
 
-[node name="PlayScene" type="Node2D"]
+[node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition")]
 script = ExtResource("1_btd5q")
+screen_transition = NodePath("CanvasLayer/ColorRect")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
 zoom = Vector2(6, 6)
@@ -129,7 +130,7 @@ follow_target = NodePath("../Player")
 z_index = 100
 position = Vector2(42, -61)
 speed = 100.0
-max_health = 10.0
+max_health = 20.0
 
 [node name="Map" type="Node" parent="."]
 
@@ -152,3 +153,13 @@ tile_set = SubResource("TileSet_e6jdp")
 
 [node name="Skeleton" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-86, -19)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
