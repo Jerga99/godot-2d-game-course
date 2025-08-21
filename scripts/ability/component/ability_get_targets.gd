@@ -35,7 +35,7 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 			if parent is Entity:
 				var to_target = (parent.position - caster.position).normalized()
 				var dot = dir_to_mouse.dot(to_target)
-				var fov = deg_to_rad(180)
+				var fov = deg_to_rad(90)
 				
 				if dot > cos(fov / 2):
 					targets.push_back(parent)
