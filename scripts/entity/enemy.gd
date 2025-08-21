@@ -11,6 +11,7 @@ var last_position
 
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var hit_particles: CPUParticles2D = $HitParticles
 
 func _ready():
 	super._ready()
@@ -56,6 +57,14 @@ func get_height() -> float:
 	else:
 		return super.get_height()
 	
+	
+func _show_damage_taken_effect():
+	super._show_damage_taken_effect()	
+	
+	if hit_particles != null:
+		hit_particles.emitting = true
+	
+
 func _on_animated_sprite_2d_animation_finished():
 	if current_anim.name == "die":
 		queue_free()
