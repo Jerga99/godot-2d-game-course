@@ -11,6 +11,8 @@ var spawn_location: Vector2
 
 @onready var ability_controller: AbilityController = $AbilityController
 
+signal player_died(player: Player)
+
 func _ready():
 	super._ready()
 	add_to_group("player")
@@ -60,5 +62,4 @@ func _handle_animation():
 
 func _on_animated_sprite_2d_animation_finished():
 	if current_anim.name == "die":
-		var scene = get_parent() as PlayScene
-		scene.handle_game_over(self)
+		player_died.emit(self)
