@@ -347,7 +347,7 @@ material = SubResource("ShaderMaterial_haw2w")
 sprite_frames = SubResource("SpriteFrames_xrus2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.243362
+frame_progress = 0.000892018
 
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("5_w4hcs")

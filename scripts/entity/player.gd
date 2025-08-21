@@ -17,6 +17,8 @@ func _ready():
 	weapon_left = self.position + (self.position - weapon.position)
 	
 func _process(delta: float):
+	if is_dead: return
+	
 	_handle_movemment(delta)
 	_handle_abilities()	
 	_handle_animation()
