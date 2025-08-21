@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bao2nasbado03"]
+[gd_scene load_steps=9 format=3 uid="uid://bao2nasbado03"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_wqbl1"]
 [ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/component/ability_spawn_manifest.gd" id="2_6scyu"]
 [ext_resource type="PackedScene" uid="uid://4pyr8i3tu5v3" path="res://scenes/ability/slash_ability_manifest.tscn" id="3_jabok"]
 [ext_resource type="Script" uid="uid://c8htvbdy2nj8o" path="res://scripts/ability/component/ability_push_back.gd" id="4_wqbl1"]
 [ext_resource type="Script" uid="uid://dlv7h3h01wgu3" path="res://scripts/ability/component/ability_turn_to_mouse.gd" id="5_6scyu"]
+[ext_resource type="Script" uid="uid://bxhrr65oe5mo4" path="res://scripts/ability/component/ability_component_group.gd" id="6_dv1fb"]
 [ext_resource type="Script" uid="uid://b8xa52gceh2ci" path="res://scripts/ability/component/ability_get_targets.gd" id="6_jabok"]
 [ext_resource type="Script" uid="uid://bgc4ieq2gc1ey" path="res://scripts/ability/component/ability_deal_damage.gd" id="7_ny4m0"]
 
@@ -26,14 +27,16 @@ frequency = 2
 script = ExtResource("5_6scyu")
 metadata/_custom_type_script = "uid://dlv7h3h01wgu3"
 
-[node name="AbilityGetTargets" type="Node" parent="."]
+[node name="DealDamageGroup" type="Node" parent="."]
+script = ExtResource("6_dv1fb")
+exec_delay = 0.2
+
+[node name="AbilityGetTargets" type="Node" parent="DealDamageGroup"]
 script = ExtResource("6_jabok")
 radius = 20.0
-exec_delay = 0.2
 metadata/_custom_type_script = "uid://b8xa52gceh2ci"
 
-[node name="AbilityDealDamage" type="Node" parent="."]
+[node name="AbilityDealDamage" type="Node" parent="DealDamageGroup"]
 script = ExtResource("7_ny4m0")
 damage = 14.0
-exec_delay = 0.21
 metadata/_custom_type_script = "uid://bgc4ieq2gc1ey"
