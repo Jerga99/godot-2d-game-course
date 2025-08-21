@@ -13,17 +13,16 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 	shape.radius = radius
 	
 	var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
-	var dir_to_mouse = (mouse_pos - caster.position).normalized() * radius
+	var dir_to_mouse = (mouse_pos - caster.position).normalized()
 	
 	var query = PhysicsShapeQueryParameters2D.new()
 	query.shape = shape
-	query.transform.origin = caster.position + dir_to_mouse
+	query.transform.origin = caster.position
 	query.collide_with_areas = true
 	
 	var line = create_debug_circle(radius)
 	caster.add_child(line)
-	line.position += dir_to_mouse
-
+	
 	var space_state = caster.get_world_2d().direct_space_state
 	var results = space_state.intersect_shape(query)
 	var targets: Array[Entity] = []
@@ -34,7 +33,13 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 			var parent = collider.get_parent()
 			
 			if parent is Entity:
-				targets.push_back(parent)
+				var to_target = (parent.position - caster.position).normalized()
+				var dot = dir_to_mouse.dot(to_target)
+				var fov = deg_to_rad(180)
+				
+				if dot > cos(fov / 2):
+					targets.push_back(parent)
+				
 	
 	call_deferred("destroy_line", line, 0.2)
 	return targets
