@@ -24,21 +24,21 @@ func _process(delta: float):
 	if is_dead: return
 	
 	if player != null:
-		var dir
+		var movement_dir = Vector2.ZERO
 		
 		if pathfinding != null:
-			dir = pathfinding.find_path(player.global_position).normalized()
+			movement_dir = pathfinding.find_path(player.global_position).normalized()
 		else:
-			dir = (player.position - self.position).normalized()
+			movement_dir = (player.position - self.position).normalized()
 	
 		if position.distance_to(player.position) > stop_distance:
-			position += dir * speed * delta
+			position += movement_dir * speed * delta
 		else:
 			ability_controller.trigger_ability_by_idx(0)
 		
 		velocity = (position - last_position) / delta
 		current_speed = velocity.length()
-		_face_target(dir)
+		_face_target(player.position - position)
 	
 	last_position = position
 	_handle_animations()

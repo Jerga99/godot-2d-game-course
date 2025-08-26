@@ -155,13 +155,7 @@ tile_set = SubResource("TileSet_e6jdp")
 position = Vector2(-89, -33)
 
 [node name="Skeleton2" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-96, -33)
-
-[node name="Skeleton3" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-92, -38)
-
-[node name="Skeleton4" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-92, -33)
+position = Vector2(-75, -9)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

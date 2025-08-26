@@ -338,7 +338,7 @@ z_index = 100
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_txkty")
 speed = 20.0
-stop_distance = 15.0
+stop_distance = 25.0
 max_health = 300.0
 damage_text_color = Color(1, 1, 1, 1)
 
@@ -374,6 +374,6 @@ color_ramp = SubResource("Gradient_i0f3v")
 
 [node name="Pathfinding" type="Node2D" parent="."]
 script = ExtResource("10_xrus2")
-separation_force = 250
+separation_force = 150
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
