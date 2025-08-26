@@ -20,8 +20,8 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 	query.transform.origin = caster.position
 	query.collide_with_areas = true
 	
-	var line = create_debug_circle(radius)
-	caster.add_child(line)
+	#var line = create_debug_circle(radius)
+	#caster.add_child(line)
 	
 	var space_state = caster.get_world_2d().direct_space_state
 	var results = space_state.intersect_shape(query)
@@ -41,7 +41,7 @@ func check_colliders_around_position(caster: Entity, radius: float) -> Array[Ent
 					targets.push_back(parent)
 				
 	
-	call_deferred("destroy_line", line, 0.2)
+	#call_deferred("destroy_line", line, 0.2)
 	return targets
 	
 	

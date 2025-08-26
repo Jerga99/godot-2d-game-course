@@ -152,16 +152,16 @@ tile_map_data = PackedByteArray("AAAKAOv/AAAAAAAAAAANAOv/AAACAAAAAAAQAOv/AAABAAA
 tile_set = SubResource("TileSet_e6jdp")
 
 [node name="Skeleton" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-86, -19)
+position = Vector2(-89, -33)
 
 [node name="Skeleton2" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-66, -1.90735e-06)
 
 [node name="Skeleton3" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-78, -59)
+position = Vector2(-79, -39)
 
 [node name="Skeleton4" parent="." instance=ExtResource("6_da3qe")]
-position = Vector2(-62, -33)
+position = Vector2(-79, -22)
 
 [node name="Skeleton5" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-117, -14)
