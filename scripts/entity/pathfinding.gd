@@ -2,6 +2,7 @@ class_name Pathfinding
 extends Node2D
 
 @export var neigbour_check_radius = 30.0
+@export var separation_force = 300
 
 func find_path(target_pos: Vector2):
 	var shape = CircleShape2D.new()
@@ -23,8 +24,29 @@ func find_path(target_pos: Vector2):
 			
 			if parent is Enemy and parent != self.get_parent():
 				neigbours.push_back(parent)
-					
-	return Vector2(100,100)
+				
+	var separation_vector = separation(neigbours)
+	
+	return (target_pos - global_position) + separation_vector * separation_force
+				
+func separation(neigbours: Array[Enemy]):
+	var seperation_vector = Vector2.ZERO
+	
+	for neighbour in neigbours:
+		var to_me = global_position - neighbour.global_position
+		var distance = to_me.length()
+		
+		if distance > 0:
+			seperation_vector += to_me.normalized() / distance
+			
+	return seperation_vector
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
