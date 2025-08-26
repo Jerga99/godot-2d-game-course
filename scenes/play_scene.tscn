@@ -130,7 +130,7 @@ follow_target = NodePath("../Player")
 z_index = 100
 position = Vector2(42, -61)
 speed = 100.0
-max_health = 20.0
+max_health = 300.0
 
 [node name="Map" type="Node" parent="."]
 
@@ -153,6 +153,27 @@ tile_set = SubResource("TileSet_e6jdp")
 
 [node name="Skeleton" parent="." instance=ExtResource("6_da3qe")]
 position = Vector2(-86, -19)
+
+[node name="Skeleton2" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-66, -1.90735e-06)
+
+[node name="Skeleton3" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-78, -59)
+
+[node name="Skeleton4" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-62, -33)
+
+[node name="Skeleton5" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-117, -14)
+
+[node name="Skeleton6" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-97, 5)
+
+[node name="Skeleton7" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-109, -54)
+
+[node name="Skeleton8" parent="." instance=ExtResource("6_da3qe")]
+position = Vector2(-93, -28)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

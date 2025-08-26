@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cqngy6tky4lra"]
+[gd_scene load_steps=56 format=3 uid="uid://cqngy6tky4lra"]
 
 [ext_resource type="Script" uid="uid://c287ibr3ofedg" path="res://scripts/entity/enemy.gd" id="1_txkty"]
 [ext_resource type="Texture2D" uid="uid://dnrt755loii3p" path="res://assets/Skeletons_Free_Pack 2/Skeleton_Sword/Skeleton_White/Skeleton_With_VFX/Skeleton_01_White_Idle.png" id="2_txkty"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://e0cjvd4lswu2" path="res://scripts/ability/core/ability_controller.gd" id="5_w4hcs"]
 [ext_resource type="PackedScene" uid="uid://ls38l45jp8fo" path="res://scenes/ability/skeleton_slash.tscn" id="6_haw2w"]
 [ext_resource type="PackedScene" uid="uid://s5y7su6tu1fx" path="res://scenes/hit_particles.tscn" id="9_i0f3v"]
+[ext_resource type="Script" uid="uid://dp5ye87d8482t" path="res://scripts/entity/pathfinding.gd" id="10_xrus2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_haw2w"]
 shader = ExtResource("2_w4hcs")
@@ -370,5 +371,8 @@ lifetime_randomness = 0.58
 initial_velocity_min = 30.0
 initial_velocity_max = 60.0
 color_ramp = SubResource("Gradient_i0f3v")
+
+[node name="Pathfinding" type="Node2D" parent="."]
+script = ExtResource("10_xrus2")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

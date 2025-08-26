@@ -12,6 +12,7 @@ var last_position
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var hit_particles: CPUParticles2D = $HitParticles
+@onready var pathfinding: Pathfinding = $Pathfinding
 
 func _ready():
 	super._ready()
@@ -23,8 +24,13 @@ func _process(delta: float):
 	if is_dead: return
 	
 	if player != null:
-		var dir = (player.position - self.position).normalized()
+		var dir
 		
+		if pathfinding != null:
+			dir = pathfinding.find_path(player.global_position).normalized()
+		else:
+			dir = (player.position - self.position).normalized()
+	
 		if position.distance_to(player.position) > stop_distance:
 			position += dir * speed * delta
 		else:
