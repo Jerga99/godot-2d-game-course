@@ -21,10 +21,9 @@ func find_path(target_pos: Vector2):
 			var collider = result.collider
 			var parent = collider.get_parent() 
 			
-			if parent is Enemy:
-				print(parent)
+			if parent is Enemy and parent != self.get_parent():
 				neigbours.push_back(parent)
-	
+					
 	return Vector2(100,100)
 	
 	
