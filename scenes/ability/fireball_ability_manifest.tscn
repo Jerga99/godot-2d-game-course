@@ -23,6 +23,7 @@ frame_4/duration = 1.0
 [node name="FireballAbilityManifest" type="Node2D"]
 z_index = 100
 script = ExtResource("1_mjrrf")
+speed = 60.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
