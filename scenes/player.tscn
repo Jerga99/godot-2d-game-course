@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=32 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://scripts/entity/player.gd" id="1_onrkg"]
@@ -175,6 +175,9 @@ animations = [{
 atlas = ExtResource("6_tuyoq")
 region = Rect2(69, 0, 7, 16)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
+radius = 8.0
+
 [node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_onrkg")
 weapon = NodePath("Weapon")
@@ -201,5 +204,10 @@ texture_filter = 1
 position = Vector2(8, 0)
 rotation = 0.610865
 texture = SubResource("AtlasTexture_fjrip")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_fjrip")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

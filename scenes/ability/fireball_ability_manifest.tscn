@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx1fal2hv3uj1"]
+[gd_scene load_steps=9 format=3 uid="uid://dx1fal2hv3uj1"]
 
 [ext_resource type="Texture2D" uid="uid://b717bofbo2il2" path="res://assets/FB00_nyknck/FB00_nyknck/FB001.png" id="1_aj1uv"]
 [ext_resource type="Script" uid="uid://cvyxd6pvvxnah" path="res://scripts/ability/manifest/projectile_manifest.gd" id="1_mjrrf"]
@@ -20,11 +20,22 @@ frame_3/duration = 1.0
 frame_4/texture = ExtResource("5_m2t4b")
 frame_4/duration = 1.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjrrf"]
+
 [node name="FireballAbilityManifest" type="Node2D"]
 z_index = 100
 script = ExtResource("1_mjrrf")
 speed = 60.0
+target_group = "player"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = SubResource("AnimatedTexture_kfmin")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11, -2)
+shape = SubResource("CircleShape2D_mjrrf")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

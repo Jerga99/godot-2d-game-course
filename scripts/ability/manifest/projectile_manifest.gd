@@ -3,6 +3,7 @@ class_name ProjectileManifest
 extends AbilityManifest
 
 @export var speed = 10.0
+@export var target_group: String
 
 var current_dir = Vector2.ZERO
 
@@ -14,3 +15,10 @@ func activate(context: AbilityContext):
 
 func _process(delta):
 	global_position += current_dir * delta * speed
+
+
+func _on_area_2d_area_entered(area: Area2D):
+	var parent = area.get_parent()
+	
+	if parent != null and parent.is_in_group(target_group):
+		print(parent.name)
