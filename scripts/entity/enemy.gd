@@ -58,8 +58,13 @@ func _face_target(dir: Vector2):
 		
 func get_height() -> float:
 	if collision_shape != null:
-		var shape = collision_shape.shape as CapsuleShape2D
-		return shape.height * scale.y
+		var shape = collision_shape.shape
+		if shape is  CapsuleShape2D:
+			return shape.height * scale.y
+		elif shape is CircleShape2D:
+			return shape.radius * scale.y
+		else:
+			return super.get_height()
 	else:
 		return super.get_height()
 	
