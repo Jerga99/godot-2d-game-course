@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx1fal2hv3uj1"]
+
+[ext_resource type="Texture2D" uid="uid://b717bofbo2il2" path="res://assets/FB00_nyknck/FB00_nyknck/FB001.png" id="1_aj1uv"]
+[ext_resource type="Texture2D" uid="uid://ctp6nlnf68t32" path="res://assets/FB00_nyknck/FB00_nyknck/FB002.png" id="2_mjrrf"]
+[ext_resource type="Texture2D" uid="uid://bsjelig8a1ub5" path="res://assets/FB00_nyknck/FB00_nyknck/FB003.png" id="3_xun7p"]
+[ext_resource type="Texture2D" uid="uid://bokhcc3g8uc2e" path="res://assets/FB00_nyknck/FB00_nyknck/FB004.png" id="4_l6d4u"]
+[ext_resource type="Texture2D" uid="uid://d3rcuhucqfxms" path="res://assets/FB00_nyknck/FB00_nyknck/FB005.png" id="5_m2t4b"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kfmin"]
+frames = 5
+speed_scale = 10.0
+frame_0/texture = ExtResource("1_aj1uv")
+frame_1/texture = ExtResource("2_mjrrf")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_xun7p")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_l6d4u")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_m2t4b")
+frame_4/duration = 1.0
+
+[node name="FireballAbilityManifest" type="Node2D"]
+z_index = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AnimatedTexture_kfmin")
