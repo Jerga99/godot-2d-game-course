@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0yyentf4khjn"]
+
+[ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_vy2j5"]
+[ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/component/ability_spawn_manifest.gd" id="2_78kyi"]
+[ext_resource type="PackedScene" uid="uid://dx1fal2hv3uj1" path="res://scenes/ability/fireball_ability_manifest.tscn" id="3_ajus0"]
+
+[node name="FireballAbility" type="Node"]
+script = ExtResource("1_vy2j5")
+cooldown = 0.5
+
+[node name="SpawnManifest" type="Node" parent="."]
+script = ExtResource("2_78kyi")
+manifest_scene = ExtResource("3_ajus0")
+set_as_child = true

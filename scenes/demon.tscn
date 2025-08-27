@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://18260mtnp6v"]
+[gd_scene load_steps=27 format=3 uid="uid://18260mtnp6v"]
 
 [ext_resource type="Script" uid="uid://c287ibr3ofedg" path="res://scripts/entity/enemy.gd" id="1_vqfja"]
 [ext_resource type="Shader" uid="uid://c3s58l24phxjo" path="res://shaders/entity.gdshader" id="2_yafd3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://krx6tifgnhcq" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/IDLE.png" id="4_15y58"]
 [ext_resource type="Texture2D" uid="uid://cu1h6remsl2cp" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/FLYING.png" id="5_vqfja"]
 [ext_resource type="Script" uid="uid://e0cjvd4lswu2" path="res://scripts/ability/core/ability_controller.gd" id="7_cyopu"]
+[ext_resource type="PackedScene" uid="uid://d0yyentf4khjn" path="res://scenes/ability/fireball_ability.tscn" id="7_u20x4"]
 [ext_resource type="Script" uid="uid://dp5ye87d8482t" path="res://scripts/entity/pathfinding.gd" id="10_3vk75"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_haw2w"]
@@ -144,7 +145,7 @@ z_index = 100
 scale = Vector2(-0.5, 0.5)
 script = ExtResource("1_vqfja")
 speed = 20.0
-stop_distance = 25.0
+stop_distance = 100.0
 max_health = 300.0
 damage_text_color = Color(1, 1, 1, 1)
 
@@ -159,6 +160,8 @@ frame_progress = 0.454197
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("7_cyopu")
 metadata/_custom_type_script = "uid://e0cjvd4lswu2"
+
+[node name="FireballAbility" parent="AbilityController" instance=ExtResource("7_u20x4")]
 
 [node name="Area2D" type="Area2D" parent="."]
 
