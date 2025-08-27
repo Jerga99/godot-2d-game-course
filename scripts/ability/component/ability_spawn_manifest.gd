@@ -4,6 +4,7 @@ extends AbilityComponent
 @export var manifest_scene: PackedScene
 @export var set_as_child: bool = false
 @export var spawn_offset: Vector2 = Vector2.ZERO
+@export var scale_multiplier: float = 1.0
 
 func _activate(context: AbilityContext):
 	if manifest_scene == null: return
@@ -19,6 +20,7 @@ func _activate(context: AbilityContext):
 		root.add_child(ability_manifest)
 		
 	ability_manifest.position += spawn_offset
+	ability_manifest.scale *= scale_multiplier
 	ability_manifest.activate(context)
 	
 	

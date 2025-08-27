@@ -2,6 +2,7 @@
 class_name ProjectileManifest
 extends AbilityManifest
 
+@export var damage = 10.0
 @export var speed = 10.0
 @export var target_group: String
 
@@ -21,4 +22,11 @@ func _on_area_2d_area_entered(area: Area2D):
 	var parent = area.get_parent()
 	
 	if parent != null and parent.is_in_group(target_group):
-		print(parent.name)
+		if parent is Entity:
+			parent.apply_damage(damage)	
+			queue_free()
+		
+		
+		
+		
+		
