@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd18ujo5b4of"
+path="res://.godot/imported/Sword Impact Hit 1.wav-655cf7f66107ffb858b7a4aad80835b1.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Sword Impact Hit 1.wav"
+dest_files=["res://.godot/imported/Sword Impact Hit 1.wav-655cf7f66107ffb858b7a4aad80835b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

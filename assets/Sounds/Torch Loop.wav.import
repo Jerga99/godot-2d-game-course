@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c51xo8ro11gm4"
+path="res://.godot/imported/Torch Loop.wav-86e451096ab90070e00a6907614b9502.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Torch Loop.wav"
+dest_files=["res://.godot/imported/Torch Loop.wav-86e451096ab90070e00a6907614b9502.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
