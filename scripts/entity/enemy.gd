@@ -16,6 +16,7 @@ var last_position
 
 func _ready():
 	super._ready()
+	add_to_group("enemy")
 	last_position = position
 	player =  get_tree().get_first_node_in_group("player")
 	

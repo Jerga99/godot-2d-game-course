@@ -14,9 +14,11 @@ height = 18.0
 [node name="WeaponThrowAbilityManifest" type="Node2D"]
 z_index = 100
 script = ExtResource("1_me8nn")
-speed = 60.0
+speed = 120.0
 target_group = "enemy"
 max_distance = 120.0
+rotating = true
+rotation_speed = 720.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

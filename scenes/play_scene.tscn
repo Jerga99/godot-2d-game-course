@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=15 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://0osaa78r1nbu" path="res://assets/Cute_Fantasy_Free 2/Outdoor decoration/Outdoor_Decor_Free.png" id="5_5uqcj"]
 [ext_resource type="PackedScene" uid="uid://cqngy6tky4lra" path="res://scenes/skeleton.tscn" id="6_da3qe"]
 [ext_resource type="PackedScene" uid="uid://18260mtnp6v" path="res://scenes/demon.tscn" id="8_7pyap"]
-[ext_resource type="PackedScene" uid="uid://dx1fal2hv3uj1" path="res://scenes/ability/fireball_ability_manifest.tscn" id="9_uyxvy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
 texture = ExtResource("3_1p5oe")
@@ -175,6 +174,3 @@ max_health = 20.0
 
 [node name="Demon2" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(42, 76)
-
-[node name="FireballAbilityManifest" parent="." instance=ExtResource("9_uyxvy")]
-position = Vector2(57, -18)
