@@ -16,6 +16,7 @@ z_index = 100
 script = ExtResource("1_me8nn")
 speed = 60.0
 target_group = "enemy"
+max_distance = 120.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

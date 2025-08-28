@@ -5,8 +5,10 @@ extends AbilityManifest
 @export var damage = 10.0
 @export var speed = 10.0
 @export var target_group: String
+@export var max_distance = 1000.0
 
 var current_dir = Vector2.ZERO
+var current_distance = 0.0
 
 func activate(context: AbilityContext):
 	if context.targets.size() > 0:
@@ -15,9 +17,13 @@ func activate(context: AbilityContext):
 		look_at(target_pos)
 
 func _process(delta):
-	global_position += current_dir * delta * speed
-
-
+	var movement = current_dir * delta * speed
+	current_distance += movement.length()
+	global_position += movement
+	
+	if current_distance >= max_distance:
+		queue_free()
+	
 func _on_area_2d_area_entered(area: Area2D):
 	var parent = area.get_parent()
 	

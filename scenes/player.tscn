@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw",
-"speed": 10.0
+"speed": 13.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
