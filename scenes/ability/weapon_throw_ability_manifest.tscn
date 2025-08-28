@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch41e3syxswyo"]
+
+[ext_resource type="Script" uid="uid://cvyxd6pvvxnah" path="res://scripts/ability/manifest/projectile_manifest.gd" id="1_me8nn"]
+[ext_resource type="Texture2D" uid="uid://chgv7le0tmn2v" path="res://assets/meleeAttack_plusCharacters.png" id="2_mbkge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewap0"]
+atlas = ExtResource("2_mbkge")
+region = Rect2(69, 0, 7, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8e1qa"]
+radius = 4.0
+height = 18.0
+
+[node name="WeaponThrowAbilityManifest" type="Node2D"]
+z_index = 100
+script = ExtResource("1_me8nn")
+speed = 60.0
+target_group = "enemy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_ewap0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8e1qa")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

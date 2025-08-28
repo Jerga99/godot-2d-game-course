@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://6hv14mydsvku"]
+
+[ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_ok7yl"]
+[ext_resource type="Script" uid="uid://b1iiu0se16o0n" path="res://scripts/ability/component/ability_animation_runner.gd" id="2_ioefw"]
+[ext_resource type="Script" uid="uid://bxhrr65oe5mo4" path="res://scripts/ability/component/ability_component_group.gd" id="3_3420f"]
+[ext_resource type="Script" uid="uid://d1esvyncdx5pj" path="res://scripts/ability/component/ability_target_player.gd" id="4_ieu1c"]
+[ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/component/ability_spawn_manifest.gd" id="5_h1kmq"]
+[ext_resource type="PackedScene" uid="uid://ch41e3syxswyo" path="res://scenes/ability/weapon_throw_ability_manifest.tscn" id="6_ok7yl"]
+
+[node name="WeaponThrowAbility" type="Node"]
+script = ExtResource("1_ok7yl")
+
+[node name="AbilityAnimationRunner" type="Node" parent="."]
+script = ExtResource("2_ioefw")
+animation_name = "throw"
+metadata/_custom_type_script = "uid://b1iiu0se16o0n"
+
+[node name="DelayedSpawn" type="Node" parent="."]
+script = ExtResource("3_3420f")
+exec_delay = 0.5
+metadata/_custom_type_script = "uid://bxhrr65oe5mo4"
+
+[node name="AbilityTargetPlayer" type="Node" parent="DelayedSpawn"]
+script = ExtResource("4_ieu1c")
+metadata/_custom_type_script = "uid://d1esvyncdx5pj"
+
+[node name="SpawnManifest" type="Node" parent="DelayedSpawn"]
+script = ExtResource("5_h1kmq")
+manifest_scene = ExtResource("6_ok7yl")
+scale_multiplier = 1.25
