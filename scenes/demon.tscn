@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://18260mtnp6v"]
+[gd_scene load_steps=36 format=3 uid="uid://18260mtnp6v"]
 
 [ext_resource type="Script" uid="uid://c287ibr3ofedg" path="res://scripts/entity/enemy.gd" id="1_vqfja"]
 [ext_resource type="Shader" uid="uid://c3s58l24phxjo" path="res://shaders/entity.gdshader" id="2_yafd3"]
+[ext_resource type="Texture2D" uid="uid://dwshs73tmyu11" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/ATTACK.png" id="3_15y58"]
 [ext_resource type="Texture2D" uid="uid://cv3vsqnpjpt38" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/DEATH.png" id="3_u20x4"]
 [ext_resource type="Texture2D" uid="uid://krx6tifgnhcq" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/IDLE.png" id="4_15y58"]
 [ext_resource type="Texture2D" uid="uid://cu1h6remsl2cp" path="res://assets/Flying Demon 2D Pixel Art 2/Sprites/without_outline/FLYING.png" id="5_vqfja"]
@@ -13,6 +14,38 @@
 shader = ExtResource("2_yafd3")
 shader_parameter/hurt_color = Vector4(1, 0, 0, 1)
 shader_parameter/is_hurt = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqfja"]
+atlas = ExtResource("3_15y58")
+region = Rect2(0, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd073"]
+atlas = ExtResource("3_15y58")
+region = Rect2(79, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eecw"]
+atlas = ExtResource("3_15y58")
+region = Rect2(158, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr41g"]
+atlas = ExtResource("3_15y58")
+region = Rect2(237, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npmpn"]
+atlas = ExtResource("3_15y58")
+region = Rect2(316, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iunx4"]
+atlas = ExtResource("3_15y58")
+region = Rect2(395, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br5hl"]
+atlas = ExtResource("3_15y58")
+region = Rect2(474, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4iun"]
+atlas = ExtResource("3_15y58")
+region = Rect2(553, 0, 79, 69)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yafd3"]
 atlas = ExtResource("3_u20x4")
@@ -76,6 +109,35 @@ region = Rect2(237, 0, 79, 69)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrus2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqfja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd073")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eecw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr41g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npmpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iunx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br5hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4iun")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yafd3")
@@ -153,9 +215,10 @@ damage_text_color = Color(1, 1, 1, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_haw2w")
 sprite_frames = SubResource("SpriteFrames_xrus2")
-animation = &"idle"
+animation = &"cast"
 autoplay = "idle"
-frame_progress = 0.454197
+frame = 7
+frame_progress = 1.0
 
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("7_cyopu")

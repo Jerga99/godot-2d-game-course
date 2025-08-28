@@ -10,6 +10,7 @@ script = ExtResource("1_4expr")
 
 [node name="AbilityAnimationRunner" type="Node" parent="."]
 script = ExtResource("2_veguy")
+animation_name = "slash"
 metadata/_custom_type_script = "uid://b1iiu0se16o0n"
 
 [node name="AbilityTargetPlayer" type="Node" parent="."]
