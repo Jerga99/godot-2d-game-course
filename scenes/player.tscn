@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=49 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://scripts/entity/player.gd" id="1_onrkg"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d3uqiir14ipaa" path="res://assets/Sounds/Dirt Walk 5.wav" id="6_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://chgv7le0tmn2v" path="res://assets/meleeAttack_plusCharacters.png" id="6_tuyoq"]
 [ext_resource type="Script" uid="uid://xt6qkn18p131" path="res://scripts/resources/audio_config.gd" id="7_fulsm"]
+[ext_resource type="Script" uid="uid://4u4jaopqq2j3" path="res://scripts/utils/footstep_effect.gd" id="14_f1ej7"]
 
 [sub_resource type="Resource" id="Resource_4r5pv"]
 script = ExtResource("7_fulsm")
@@ -300,38 +301,45 @@ current = true
 [node name="FootstepEffect" type="Node2D" parent="."]
 z_index = -1
 position = Vector2(5, 15)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("14_f1ej7")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="FootstepEffect"]
-position = Vector2(-10, 4.76837e-07)
-amount = 20
-lifetime = 0.2
-explosiveness = 0.7
+position = Vector2(-6.66667, 4.76837e-07)
+emitting = false
+amount = 10
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.5
 emission_shape = 1
 emission_sphere_radius = 7.0
 direction = Vector2(0, -1)
 spread = 90.0
-gravity = Vector2(0, 100)
-initial_velocity_min = 100.0
-initial_velocity_max = 150.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
 scale_amount_curve = SubResource("Curve_jej6c")
+color = Color(0.932438, 0.868037, 0.782071, 1)
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="FootstepEffect"]
-position = Vector2(-33.3333, 6.66667)
-amount = 20
-lifetime = 0.2
-explosiveness = 0.7
+position = Vector2(-30, 10)
+emitting = false
+amount = 10
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.5
 emission_shape = 1
 emission_sphere_radius = 7.0
 direction = Vector2(0, -1)
 spread = 90.0
-gravity = Vector2(0, 100)
-initial_velocity_min = 100.0
-initial_velocity_max = 150.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
 scale_amount_curve = SubResource("Curve_jej6c")
+color = Color(0.932438, 0.868037, 0.782071, 1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

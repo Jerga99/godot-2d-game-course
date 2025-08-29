@@ -13,6 +13,7 @@ var spawn_location: Vector2
 var footstep_timer = 0.0
 
 @onready var ability_controller: AbilityController = $AbilityController
+@onready var footstep_effect: FootstepEffect = $FootstepEffect
 
 signal player_died(player: Player)
 
@@ -51,6 +52,8 @@ func _handle_movemment(delta: float):
 	
 	if n_movement.length() > 0:
 		is_moving = true
+		footstep_effect.play()
+		
 		if turning_cooldown == 0:
 			if horizontal > 0:
 				animated_sprite.flip_h = false
