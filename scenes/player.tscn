@@ -1,12 +1,27 @@
-[gd_scene load_steps=40 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=47 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://scripts/entity/player.gd" id="1_onrkg"]
 [ext_resource type="Shader" uid="uid://c3s58l24phxjo" path="res://shaders/entity.gdshader" id="2_fjrip"]
+[ext_resource type="AudioStream" uid="uid://d4codkitl7pcp" path="res://assets/Sounds/Dirt Walk 1.wav" id="2_jej6c"]
+[ext_resource type="AudioStream" uid="uid://jbwi2xukb1jr" path="res://assets/Sounds/Dirt Walk 2.wav" id="3_f1ej7"]
 [ext_resource type="Script" uid="uid://e0cjvd4lswu2" path="res://scripts/ability/core/ability_controller.gd" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://cs02ahck6euci" path="res://assets/Sounds/Dirt Walk 3.wav" id="4_oprun"]
 [ext_resource type="PackedScene" uid="uid://bao2nasbado03" path="res://scenes/ability/slash_ability.tscn" id="4_sweqy"]
+[ext_resource type="AudioStream" uid="uid://dtbs0fd0lk2ea" path="res://assets/Sounds/Dirt Walk 4.wav" id="5_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://6hv14mydsvku" path="res://scenes/ability/weapon_throw_ability.tscn" id="6_fjrip"]
+[ext_resource type="AudioStream" uid="uid://d3uqiir14ipaa" path="res://assets/Sounds/Dirt Walk 5.wav" id="6_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://chgv7le0tmn2v" path="res://assets/meleeAttack_plusCharacters.png" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://xt6qkn18p131" path="res://scripts/resources/audio_config.gd" id="7_fulsm"]
+
+[sub_resource type="Resource" id="Resource_4r5pv"]
+script = ExtResource("7_fulsm")
+audio_streams = Array[AudioStream]([ExtResource("2_jej6c"), ExtResource("3_f1ej7"), ExtResource("4_oprun"), ExtResource("5_a8ls1"), ExtResource("6_qfm1y")])
+volume_db = -5.0
+max_distance = 2000.0
+autoplay = false
+bus = &"sfx"
+metadata/_custom_type_script = "uid://xt6qkn18p131"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smehm"]
 shader = ExtResource("2_fjrip")
@@ -242,6 +257,8 @@ radius = 8.0
 [node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_onrkg")
 weapon = NodePath("Weapon")
+footstep_clip = SubResource("Resource_4r5pv")
+footstep_interval = 0.35
 max_health = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

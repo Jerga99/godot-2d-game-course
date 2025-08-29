@@ -3,11 +3,14 @@ extends Entity
 
 @export var speed: float = 20
 @export var weapon: Node2D
+@export var footstep_clip: AudioConfig
+@export var footstep_interval = 0.3
 
 var is_moving: bool = false
 var weapon_right: Vector2
 var weapon_left: Vector2
 var spawn_location: Vector2
+var footstep_timer = 0.0
 
 @onready var ability_controller: AbilityController = $AbilityController
 
@@ -24,6 +27,7 @@ func _process(delta: float):
 	if is_dead: return
 	
 	_handle_movemment(delta)
+	_handle_footstep_sound(delta)
 	_handle_abilities()	
 	_handle_animation()
 
@@ -52,7 +56,16 @@ func _handle_movemment(delta: float):
 				animated_sprite.flip_h = false
 			elif horizontal < 0:
 				animated_sprite.flip_h = true
-			
+
+func _handle_footstep_sound(delta: float):
+	if is_moving:
+		footstep_timer += delta
+		if footstep_timer >= footstep_interval:
+			AudioController.play(footstep_clip, global_position)
+			footstep_timer = 0.0
+	else:
+		footstep_timer = 0.0
+
 func _handle_animation():
 	if is_moving:
 		play_animation(AnimationWrapper.new("run"))
