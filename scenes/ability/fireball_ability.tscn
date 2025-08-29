@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_l214j"]
 script = ExtResource("9_p4xas")
 audio_streams = Array[AudioStream]([ExtResource("8_4ftk6")])
-volume_db = 0.0
+volume_db = -15.0
 max_distance = 300.0
 autoplay = false
 bus = &"sfx"

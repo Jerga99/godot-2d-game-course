@@ -9,3 +9,7 @@ func _activate(context: AbilityContext):
 	for target in targets:
 		if target is Entity:
 			target.apply_damage(damage)
+			
+			for child in get_children():
+				if child is AbilityComponent:
+					child.activate(context)

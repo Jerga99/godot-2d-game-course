@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bao2nasbado03"]
+[gd_scene load_steps=19 format=3 uid="uid://bao2nasbado03"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_wqbl1"]
 [ext_resource type="Script" uid="uid://cm7em3ljx2ckn" path="res://scripts/ability/component/ability_spawn_manifest.gd" id="2_6scyu"]
@@ -13,11 +13,23 @@
 [ext_resource type="AudioStream" uid="uid://c1oabhilhfnrc" path="res://assets/Sounds/Sword Attack 2.wav" id="8_b7vmg"]
 [ext_resource type="AudioStream" uid="uid://ceuvysyg7l8w3" path="res://assets/Sounds/Sword Attack 3.wav" id="9_p68t7"]
 [ext_resource type="Script" uid="uid://xt6qkn18p131" path="res://scripts/resources/audio_config.gd" id="10_p68t7"]
+[ext_resource type="AudioStream" uid="uid://cd18ujo5b4of" path="res://assets/Sounds/Sword Impact Hit 1.wav" id="14_ycrjt"]
+[ext_resource type="AudioStream" uid="uid://d1y75fs1hc4o0" path="res://assets/Sounds/Sword Impact Hit 2.wav" id="15_4h87d"]
+[ext_resource type="AudioStream" uid="uid://dflvnjrr68e48" path="res://assets/Sounds/Sword Impact Hit 3.wav" id="16_alros"]
 
 [sub_resource type="Resource" id="Resource_gw6mj"]
 script = ExtResource("10_p68t7")
 audio_streams = Array[AudioStream]([ExtResource("7_jbik4"), ExtResource("8_b7vmg"), ExtResource("9_p68t7")])
 volume_db = 0.0
+max_distance = 2000.0
+autoplay = false
+bus = &"sfx"
+metadata/_custom_type_script = "uid://xt6qkn18p131"
+
+[sub_resource type="Resource" id="Resource_ycrjt"]
+script = ExtResource("10_p68t7")
+audio_streams = Array[AudioStream]([ExtResource("14_ycrjt"), ExtResource("15_4h87d"), ExtResource("16_alros")])
+volume_db = 10.0
 max_distance = 2000.0
 autoplay = false
 bus = &"sfx"
@@ -58,3 +70,8 @@ metadata/_custom_type_script = "uid://b8xa52gceh2ci"
 script = ExtResource("7_ny4m0")
 damage = 14.0
 metadata/_custom_type_script = "uid://bgc4ieq2gc1ey"
+
+[node name="PlayImpactSound" type="Node" parent="DealDamageGroup/AbilityDealDamage"]
+script = ExtResource("6_7jqjq")
+audio_config = SubResource("Resource_ycrjt")
+metadata/_custom_type_script = "uid://dvjvp0xh7qb55"
