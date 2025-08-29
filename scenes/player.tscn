@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=50 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://scripts/entity/player.gd" id="1_onrkg"]
@@ -256,9 +256,13 @@ region = Rect2(69, 0, 7, 16)
 radius = 8.0
 
 [sub_resource type="Curve" id="Curve_jej6c"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1.67176), 0.0, 0.0, 0, 0, Vector2(0.977819, 0.881546), 0.0, 0.0, 0, 0]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.00369686, 2.13685), 0.0, 0.0, 0, 0, Vector2(0.97597, 0.769171), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_f1ej7"]
+offsets = PackedFloat32Array(0.310782, 1)
+colors = PackedColorArray(0.933333, 0.866667, 0.780392, 1, 0.933333, 0.866667, 0.780392, 0)
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_onrkg")
@@ -322,6 +326,7 @@ initial_velocity_min = 80.0
 initial_velocity_max = 120.0
 scale_amount_curve = SubResource("Curve_jej6c")
 color = Color(0.932438, 0.868037, 0.782071, 1)
+color_ramp = SubResource("Gradient_f1ej7")
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="FootstepEffect"]
 position = Vector2(-30, 10)
@@ -341,5 +346,6 @@ initial_velocity_min = 80.0
 initial_velocity_max = 120.0
 scale_amount_curve = SubResource("Curve_jej6c")
 color = Color(0.932438, 0.868037, 0.782071, 1)
+color_ramp = SubResource("Gradient_f1ej7")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
