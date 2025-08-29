@@ -8,6 +8,7 @@ extends AbilityManifest
 @export var max_distance = 1000.0
 @export var rotating = false
 @export var rotation_speed = 360.0
+@export var hit_sound: AudioConfig
 
 var current_dir = Vector2.ZERO
 var current_distance = 0.0
@@ -35,6 +36,9 @@ func _on_area_2d_area_entered(area: Area2D):
 	if parent != null and parent.is_in_group(target_group):
 		if parent is Entity:
 			parent.apply_damage(damage)	
+			
+			if hit_sound != null: AudioController.play(hit_sound, global_position)
+			
 			queue_free()
 		
 		
