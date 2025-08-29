@@ -4,5 +4,5 @@ extends AbilityComponent
 @export var audio_config: AudioConfig
 
 func _activate(context: AbilityContext):
-	AudioController.play()
+	AudioController.play(audio_config)
 	

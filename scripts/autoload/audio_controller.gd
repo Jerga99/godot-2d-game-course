@@ -12,6 +12,44 @@ func _setup_audio_players():
 		available_players.push_back(audio_player)
 		add_child(audio_player)
 		
-func play():
-	print("PLaying Sound!")
+func _get_avaiable_player():
+	var player_idx = available_players.find_custom(func(player: AudioStreamPlayer2D):
+		return not player.playing
+	)
+	
+	if player_idx > -1:
+		return available_players[player_idx]
+	else: return null
+
+		
+func play(clip_config: AudioConfig):
+	if clip_config == null: return
+	var audio_steams = clip_config.audio_streams
+	if audio_steams.is_empty(): return
+	
+	var audio_player = _get_avaiable_player()
+	
+	if audio_player == null:
+		_setup_audio_players()
+		audio_player = _get_avaiable_player()
+		
+	var random_idx = randi() % clip_config.audio_streams.size()
+		
+	audio_player.stop()
+	audio_player.volume_db = clip_config.volume_db
+	audio_player.stream = clip_config.audio_streams[random_idx]
+	audio_player.bus = clip_config.bus
+	audio_player.play()
+	
+	return audio_player
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
