@@ -18,6 +18,7 @@
 script = ExtResource("10_p68t7")
 audio_streams = Array[AudioStream]([ExtResource("7_jbik4"), ExtResource("8_b7vmg"), ExtResource("9_p68t7")])
 volume_db = 0.0
+max_distance = 2000.0
 autoplay = false
 bus = &"sfx"
 metadata/_custom_type_script = "uid://xt6qkn18p131"

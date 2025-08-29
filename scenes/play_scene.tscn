@@ -130,7 +130,6 @@ follow_target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_0tbyp")]
 z_index = 100
-position = Vector2(42, -61)
 speed = 100.0
 max_health = 300.0
 

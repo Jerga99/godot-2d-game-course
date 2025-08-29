@@ -22,7 +22,7 @@ func _get_avaiable_player():
 	else: return null
 
 		
-func play(clip_config: AudioConfig):
+func play(clip_config: AudioConfig, global_pos = Vector2.INF):
 	if clip_config == null: return
 	var audio_steams = clip_config.audio_streams
 	if audio_steams.is_empty(): return
@@ -36,7 +36,12 @@ func play(clip_config: AudioConfig):
 	var random_idx = randi() % clip_config.audio_streams.size()
 		
 	audio_player.stop()
+	
+	if global_pos != Vector2.INF:
+		audio_player.global_position = global_pos
+	
 	audio_player.volume_db = clip_config.volume_db
+	audio_player.max_distance = clip_config.max_distance
 	audio_player.stream = clip_config.audio_streams[random_idx]
 	audio_player.bus = clip_config.bus
 	audio_player.play()
