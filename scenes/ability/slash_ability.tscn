@@ -57,5 +57,3 @@ metadata/_custom_type_script = "uid://b8xa52gceh2ci"
 script = ExtResource("7_ny4m0")
 damage = 14.0
 metadata/_custom_type_script = "uid://bgc4ieq2gc1ey"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
