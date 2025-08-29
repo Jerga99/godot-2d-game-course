@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://df2n5hlo0btwu"]
+
+[ext_resource type="Script" uid="uid://v8afkddxysaa" path="res://scripts/autoload/audio_controller.gd" id="1_ndfd8"]
+[ext_resource type="AudioStream" uid="uid://dmq80yjutsd6d" path="res://assets/Sounds/Forest Day.wav" id="2_b6mr1"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_b6mr1"]
+stream_count = 1
+stream_0 = ExtResource("2_b6mr1")
+
+[node name="AudioController" type="Node"]
+script = ExtResource("1_ndfd8")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamPlaylist_b6mr1")
+volume_db = -10.0
+autoplay = true
+bus = &"music"
