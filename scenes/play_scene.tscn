@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=18 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://0osaa78r1nbu" path="res://assets/Cute_Fantasy_Free 2/Outdoor decoration/Outdoor_Decor_Free.png" id="5_5uqcj"]
 [ext_resource type="PackedScene" uid="uid://cqngy6tky4lra" path="res://scenes/skeleton.tscn" id="6_da3qe"]
 [ext_resource type="PackedScene" uid="uid://18260mtnp6v" path="res://scenes/demon.tscn" id="8_7pyap"]
+[ext_resource type="Texture2D" uid="uid://b0cvb73klp1a4" path="res://assets/UI/Button_Simple.png" id="8_741iy"]
+[ext_resource type="Texture2D" uid="uid://c6qj883ysbv4a" path="res://assets/Free - Raven Fantasy Icons/Free - Raven Fantasy Icons/Separated Files/64x64/fc728.png" id="9_ck16l"]
 [ext_resource type="AudioStream" uid="uid://dmq80yjutsd6d" path="res://assets/Sounds/Forest Day.wav" id="9_uyxvy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
@@ -184,9 +186,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -275.0
-offset_top = -148.0
-offset_right = 275.0
+offset_left = -277.0
+offset_top = -174.0
+offset_right = 273.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(275, 130)
@@ -201,25 +204,101 @@ theme_override_constants/margin_bottom = 10
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/SpellBar/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+[node name="SpellButton" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+texture_normal = ExtResource("8_741iy")
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_ck16l")
+
+[node name="SpellButton2" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+texture_normal = ExtResource("8_741iy")
 stretch_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton2/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_ck16l")
+
+[node name="SpellButton3" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+texture_normal = ExtResource("8_741iy")
 stretch_mode = 0
 
-[node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton3/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_ck16l")
+
+[node name="SpellButton4" type="TextureButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+texture_normal = ExtResource("8_741iy")
 stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer/SpellButton4/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_ck16l")
 
 [node name="Demon" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(-10, 67)
