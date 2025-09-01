@@ -1,6 +1,7 @@
 class_name Ability
 extends Node
 
+@export var icon_texture: Texture2D
 @export var cooldown: float = 2.0
 
 func activate(entity: Entity):

@@ -4,6 +4,8 @@ extends TextureButton
 
 var ability: Ability = null
 
+@export var icon: TextureRect
+
 var binded_key: String = "":
 	set (key):
 		binded_key = key
@@ -14,6 +16,7 @@ var binded_key: String = "":
 		
 func set_ability(ability: Ability):
 	self.ability = ability
+	icon.texture = ability.icon_texture
 
 func _on_pressed():
 	if ability == null: return

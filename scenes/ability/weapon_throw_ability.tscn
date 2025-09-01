@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://6hv14mydsvku"]
+[gd_scene load_steps=8 format=3 uid="uid://6hv14mydsvku"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_ok7yl"]
+[ext_resource type="Texture2D" uid="uid://qj1563sq3uya" path="res://assets/Free - Raven Fantasy Icons/Free - Raven Fantasy Icons/Separated Files/64x64/fc732.png" id="2_3420f"]
 [ext_resource type="Script" uid="uid://b1iiu0se16o0n" path="res://scripts/ability/component/ability_animation_runner.gd" id="2_ioefw"]
 [ext_resource type="Script" uid="uid://bxhrr65oe5mo4" path="res://scripts/ability/component/ability_component_group.gd" id="3_3420f"]
 [ext_resource type="Script" uid="uid://d3h3f8ftk3xuf" path="res://scripts/ability/component/ability_target_cursorr.gd" id="4_ok7yl"]
@@ -9,6 +10,7 @@
 
 [node name="WeaponThrowAbility" type="Node"]
 script = ExtResource("1_ok7yl")
+icon_texture = ExtResource("2_3420f")
 
 [node name="AbilityAnimationRunner" type="Node" parent="."]
 script = ExtResource("2_ioefw")
