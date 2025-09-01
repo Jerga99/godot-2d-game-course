@@ -22,9 +22,9 @@ func trigger_ability_by_idx(idx: int):
 	if abilities.size() == 0: return
 	
 	var ability = abilities.get(idx)
-	_trigger_ability(ability)
+	trigger_ability(ability)
 	
-func _trigger_ability(ability: Ability):
+func trigger_ability(ability: Ability):
 	if ability == null:
 		print("Ability not found!")
 		return

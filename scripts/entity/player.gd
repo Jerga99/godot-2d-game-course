@@ -30,24 +30,19 @@ func _ready():
 	for ability_idx in range(abilities.size()):
 		var ability = abilities[ability_idx]
 		spell_bar.register_ability(ability, ability_idx)
+		
+	EventBus.play_cast_ability.connect(_handle_ability)
 	
 func _process(delta: float):
 	if is_dead: return
 	
 	_handle_movemment(delta)
 	_handle_footstep_sound(delta)
-	_handle_abilities()	
 	_handle_animation()
 
-func _handle_abilities():
-	pass
-	#if Input.is_action_just_pressed("ability_1"):
-		#ability_controller.trigger_ability_by_idx(0)
-	#if Input.is_action_just_pressed("ability_2"):
-		#ability_controller.trigger_ability_by_idx(1)
-	#if Input.is_action_just_pressed("ability_3"):
-		#ability_controller.trigger_ability_by_idx(2)
-		
+func _handle_ability(ability: Ability):
+	ability_controller.trigger_ability(ability)
+
 func _handle_movemment(delta: float):
 	is_moving = false
 	turning_cooldown = max(0, turning_cooldown - delta)

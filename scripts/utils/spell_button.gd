@@ -21,4 +21,6 @@ func set_ability(ability: Ability):
 func _on_pressed():
 	if ability == null: return
 	
-	print(ability.name + " pressed!")
+	EventBus.play_cast_ability.emit(ability)
+	
+	

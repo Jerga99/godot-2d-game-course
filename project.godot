@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 FloatText="*res://scripts/autoload/float_text.gd"
 AudioController="*res://scenes/autoload/audio_controller.tscn"
+EventBus="*res://scripts/autoload/event_bus.gd"
 
 [display]
 
