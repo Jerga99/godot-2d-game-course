@@ -5,6 +5,7 @@ extends Entity
 @export var weapon: Node2D
 @export var footstep_clip: AudioConfig
 @export var footstep_interval = 0.3
+@export var spell_bar: SpellBar = null
 
 var is_moving: bool = false
 var weapon_right: Vector2
@@ -23,6 +24,12 @@ func _ready():
 	weapon_right = weapon.position
 	weapon_left = self.position + (self.position - weapon.position)
 	spawn_location = position
+	
+	var abilities = ability_controller.abilities
+	
+	for ability_idx in range(abilities.size()):
+		var ability = abilities[ability_idx]
+		spell_bar.register_ability(ability, ability_idx)
 	
 func _process(delta: float):
 	if is_dead: return
