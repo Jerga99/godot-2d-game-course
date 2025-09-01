@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=22 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -121,6 +121,22 @@ texture = ExtResource("5_5uqcj")
 [sub_resource type="TileSet" id="TileSet_e6jdp"]
 sources/0 = SubResource("TileSetAtlasSource_5xdee")
 
+[sub_resource type="InputEventKey" id="InputEventKey_ck16l"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_ibixv"]
+events = [SubResource("InputEventKey_ck16l")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ibixv"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_0auek"]
+events = [SubResource("InputEventKey_ibixv")]
+
 [node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition")]
 script = ExtResource("1_btd5q")
 screen_transition = NodePath("CanvasLayer/ColorRect")
@@ -208,9 +224,11 @@ layout_mode = 2
 
 [node name="SpellButton" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer" instance=ExtResource("9_ibixv")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_ibixv")
 
 [node name="SpellButton2" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer" instance=ExtResource("9_ibixv")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_0auek")
 
 [node name="SpellButton3" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer" instance=ExtResource("9_ibixv")]
 layout_mode = 2
