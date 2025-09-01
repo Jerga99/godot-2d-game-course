@@ -5,6 +5,7 @@ extends TextureButton
 var ability: Ability = null
 
 @export var icon: TextureRect
+@export var progress_bar: TextureProgressBar
 
 var binded_key: String = "":
 	set (key):
