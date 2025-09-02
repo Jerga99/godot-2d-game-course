@@ -33,6 +33,10 @@ func trigger_ability(ability: Ability):
 	if cooldowns.get(ability, 0.0) > 0.0:
 		#print(ability.name + " is on cooldown!")
 		return
+		
+	if entity.current_energy < ability.energy_cost:
+		print("Not enough energy!")
+		return
  
 	entity.spend_energy(ability.energy_cost)
 	ability.activate(entity)
