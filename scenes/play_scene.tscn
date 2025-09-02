@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=26 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://dbxh71dciew6j" path="res://scripts/utils/spell_bar.gd" id="8_ck16l"]
 [ext_resource type="PackedScene" uid="uid://jmcksjjvx7di" path="res://scenes/ui/spell_button.tscn" id="9_ibixv"]
 [ext_resource type="AudioStream" uid="uid://dmq80yjutsd6d" path="res://assets/Sounds/Forest Day.wav" id="9_uyxvy"]
+[ext_resource type="Texture2D" uid="uid://fdy5odinku5x" path="res://assets/UI/health_bar_main.png" id="10_63tcr"]
+[ext_resource type="Texture2D" uid="uid://b5x2yhh37dxs6" path="res://assets/UI/health_bar_overlay.png" id="11_qhxom"]
+[ext_resource type="Texture2D" uid="uid://0shycwxt2tv4" path="res://assets/UI/health_bar_health.png" id="12_dta8y"]
+[ext_resource type="Texture2D" uid="uid://b52dp4ve7hcib" path="res://assets/UI/energy_bar_energy.png" id="13_qhxom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
 texture = ExtResource("3_1p5oe")
@@ -236,6 +240,38 @@ layout_mode = 2
 
 [node name="SpellButton4" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer" instance=ExtResource("9_ibixv")]
 layout_mode = 2
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 820.0
+offset_right = 666.0
+offset_bottom = 1076.0
+min_value = -13.0
+max_value = 113.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("10_63tcr")
+texture_over = ExtResource("11_qhxom")
+texture_progress = ExtResource("12_dta8y")
+
+[node name="PlayerEnergyBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1249.0
+offset_top = 820.0
+offset_right = 1505.0
+offset_bottom = 1076.0
+min_value = -13.0
+max_value = 113.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("10_63tcr")
+texture_over = ExtResource("11_qhxom")
+texture_progress = ExtResource("13_qhxom")
 
 [node name="Demon" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(-10, 67)
