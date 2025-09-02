@@ -33,6 +33,7 @@ func _ready():
 		
 	EventBus.play_cast_ability.connect(_handle_ability)
 	EventBus.player_health_changed.emit(current_health, max_health)
+	EventBus.player_energy_changed.emit(current_energy, max_energy)
 	
 	
 func _process(delta: float):
@@ -92,7 +93,10 @@ func apply_damage(damage: float) -> bool:
 		EventBus.player_health_changed.emit(current_health, max_health)
 		
 	return can_apply
-		
+	
+func spend_energy(energy: float):
+	current_energy -= energy
+	EventBus.player_energy_changed.emit(current_energy, max_energy)
 		
 		
 		

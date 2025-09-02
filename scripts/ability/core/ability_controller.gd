@@ -34,6 +34,7 @@ func trigger_ability(ability: Ability):
 		#print(ability.name + " is on cooldown!")
 		return
  
+	entity.spend_energy(ability.energy_cost)
 	ability.activate(entity)
 	cooldowns[ability] = ability.cooldown
 	

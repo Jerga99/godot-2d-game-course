@@ -1,11 +1,13 @@
 class_name Entity
 extends Node2D
 
+@export var max_energy: float = 100
 @export var max_health: float = 50
 @export var damage_text_color: Color = Color.FIREBRICK
 
 var current_anim: AnimationWrapper
 var current_health: float
+var current_energy: float
 var is_dead: bool = false
 var turning_cooldown = 0.0
 
@@ -13,6 +15,7 @@ var turning_cooldown = 0.0
 
 func _ready():
 	current_health = max_health
+	current_energy = max_energy
 	animated_sprite.material = animated_sprite.material.duplicate()
 	animated_sprite.animation_finished.connect(on_animation_finished)
 	
@@ -59,6 +62,8 @@ func get_height() -> float:
 	var frame_tex = animated_sprite.sprite_frames.get_frame_texture(anim, 0)
 	var height = frame_tex.get_height()
 	return height * scale.y
+	
+func spend_energy(energy: float): pass
 
 func _show_damage_popup(damage: float):
 	var height = get_height()

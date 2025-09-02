@@ -11,6 +11,7 @@
 [node name="WeaponThrowAbility" type="Node"]
 script = ExtResource("1_ok7yl")
 icon_texture = ExtResource("2_3420f")
+energy_cost = 25.0
 
 [node name="AbilityAnimationRunner" type="Node" parent="."]
 script = ExtResource("2_ioefw")

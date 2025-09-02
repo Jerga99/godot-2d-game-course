@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=28 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://0shycwxt2tv4" path="res://assets/UI/health_bar_health.png" id="12_dta8y"]
 [ext_resource type="Script" uid="uid://dri6mi14y2imb" path="res://scripts/utils/player_health_bar.gd" id="13_dta8y"]
 [ext_resource type="Texture2D" uid="uid://b52dp4ve7hcib" path="res://assets/UI/energy_bar_energy.png" id="13_qhxom"]
+[ext_resource type="Script" uid="uid://bbv8kec12leld" path="res://scripts/utils/player_energy_bar.gd" id="15_bx6jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
 texture = ExtResource("3_1p5oe")
@@ -275,6 +276,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("10_63tcr")
 texture_over = ExtResource("11_qhxom")
 texture_progress = ExtResource("13_qhxom")
+script = ExtResource("15_bx6jv")
 
 [node name="Demon" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(-10, 67)
