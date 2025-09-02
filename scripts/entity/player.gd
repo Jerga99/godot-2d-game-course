@@ -41,7 +41,23 @@ func _process(delta: float):
 	
 	_handle_movemment(delta)
 	_handle_footstep_sound(delta)
+	_handle_regen_energy(delta)
 	_handle_animation()
+	
+	print(current_energy)
+	
+func _handle_regen_energy(delta: float):
+	if current_energy >= max_energy:
+		current_energy = max_energy
+		return
+		
+	energy_timer += delta
+	
+	if energy_timer >= energy_regen_freq:
+		energy_timer = 0
+		current_energy += energy_regen_tick_value
+		EventBus.player_energy_changed.emit(current_energy, max_energy)
+	
 
 func _handle_ability(ability: Ability):
 	ability_controller.trigger_ability(ability)

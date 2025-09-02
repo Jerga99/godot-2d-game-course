@@ -5,11 +5,15 @@ extends Node2D
 @export var max_health: float = 50
 @export var damage_text_color: Color = Color.FIREBRICK
 
+@export var energy_regen_freq = 0.5
+@export var energy_regen_tick_value = 3
+
 var current_anim: AnimationWrapper
 var current_health: float
 var current_energy: float
 var is_dead: bool = false
 var turning_cooldown = 0.0
+var energy_timer = 0.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
