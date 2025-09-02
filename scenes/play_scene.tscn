@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=27 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://fdy5odinku5x" path="res://assets/UI/health_bar_main.png" id="10_63tcr"]
 [ext_resource type="Texture2D" uid="uid://b5x2yhh37dxs6" path="res://assets/UI/health_bar_overlay.png" id="11_qhxom"]
 [ext_resource type="Texture2D" uid="uid://0shycwxt2tv4" path="res://assets/UI/health_bar_health.png" id="12_dta8y"]
+[ext_resource type="Script" uid="uid://dri6mi14y2imb" path="res://scripts/utils/player_health_bar.gd" id="13_dta8y"]
 [ext_resource type="Texture2D" uid="uid://b52dp4ve7hcib" path="res://assets/UI/energy_bar_energy.png" id="13_qhxom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
@@ -150,12 +151,13 @@ zoom = Vector2(6, 6)
 script = ExtResource("1_1p5oe")
 follow_target = NodePath("../Player")
 
-[node name="Player" parent="." node_paths=PackedStringArray("spell_bar") instance=ExtResource("2_0tbyp")]
+[node name="Player" parent="." node_paths=PackedStringArray("spell_bar", "health_bar") instance=ExtResource("2_0tbyp")]
 z_index = 100
-position = Vector2(66, -64)
+position = Vector2(66, -65)
 speed = 100.0
 spell_bar = NodePath("../CanvasLayer/Control/SpellBar")
-max_health = 300.0
+health_bar = NodePath("../CanvasLayer/Control/PlayerHealthBar")
+max_health = 10000.0
 
 [node name="Map" type="Node" parent="."]
 
@@ -256,6 +258,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("10_63tcr")
 texture_over = ExtResource("11_qhxom")
 texture_progress = ExtResource("12_dta8y")
+script = ExtResource("13_dta8y")
 
 [node name="PlayerEnergyBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
 texture_filter = 1

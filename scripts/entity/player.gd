@@ -6,6 +6,7 @@ extends Entity
 @export var footstep_clip: AudioConfig
 @export var footstep_interval = 0.3
 @export var spell_bar: SpellBar = null
+@export var health_bar: PlayerHealthBar = null
 
 var is_moving: bool = false
 var weapon_right: Vector2
@@ -32,6 +33,8 @@ func _ready():
 		spell_bar.register_ability(ability, ability_idx)
 		
 	EventBus.play_cast_ability.connect(_handle_ability)
+	
+	health_bar.set_health(current_health, max_health)
 	
 func _process(delta: float):
 	if is_dead: return
