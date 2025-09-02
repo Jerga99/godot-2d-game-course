@@ -80,8 +80,29 @@ func _handle_animation():
 		play_animation(AnimationWrapper.new("run"))
 	else:
 		play_animation(AnimationWrapper.new("idle"))
-		
-
+				
 func _on_animated_sprite_2d_animation_finished():
 	if current_anim.name == "die":
 		player_died.emit(self)
+		
+		
+func apply_damage(damage: float) -> bool:
+	var can_apply = super.apply_damage(damage)
+	
+	if can_apply:
+		health_bar.set_health(current_health, max_health)	
+		
+	return can_apply
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -157,7 +157,7 @@ position = Vector2(66, -65)
 speed = 100.0
 spell_bar = NodePath("../CanvasLayer/Control/SpellBar")
 health_bar = NodePath("../CanvasLayer/Control/PlayerHealthBar")
-max_health = 10000.0
+max_health = 200.0
 
 [node name="Map" type="Node" parent="."]
 

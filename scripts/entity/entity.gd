@@ -19,8 +19,8 @@ func _ready():
 func _exit_tree():
 	animated_sprite.animation_finished.disconnect(on_animation_finished)
 	
-func apply_damage(damage: float):
-	if is_dead: return
+func apply_damage(damage: float) -> bool:
+	if is_dead: return false
 	
 	current_health -=damage
 	current_health = max(0, current_health)
@@ -32,6 +32,8 @@ func apply_damage(damage: float):
 		is_dead = true
 		play_animation(AnimationWrapper.new("die", true))
 	
+	return true
+			
 func play_animation(anim: AnimationWrapper):
 	if animated_sprite.animation == anim.name: return
 	
