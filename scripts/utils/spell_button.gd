@@ -9,6 +9,9 @@ var ability: Ability = null
 @export var cooldown_label: Label
 @export var keybind_label: Label
 
+var is_shaking = false
+var _disabled = false
+
 var binded_key: String = "":
 	set (key):
 		binded_key = key
@@ -21,10 +24,10 @@ var binded_key: String = "":
 		
 func _process(delta):
 	if ability == null: return
-	disabled = not ability.can_be_casted
+	_disabled = not ability.can_be_casted
 	progress_bar.value = ability.current_cooldown
 	
-	if disabled:
+	if _disabled:
 		if ability.current_cooldown > 0:
 			cooldown_label.text = "%3.1f" % ability.current_cooldown
 		else: cooldown_label.text = ""
@@ -33,6 +36,29 @@ func _process(delta):
 	else:
 		cooldown_label.text = ""
 		icon.modulate.a = 1.0
+	
+func _shake():
+	if is_shaking: return
+	
+	is_shaking = true
+	
+	var shake_times = 10
+	var shake_amount = 5
+	var original_pos = position
+	var tween = create_tween()
+	
+	for i in range(shake_times):
+		var offset = shake_amount if i % 2 == 0 else -shake_amount
+		tween.tween_property(self, "position:x", original_pos.x + offset, 0.05)
+		tween.set_trans(Tween.TRANS_SINE)
+		tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_property(self, "position:x", original_pos.x, 0.05)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.play()
+	await tween.finished
+	is_shaking = false
 	
 		
 func set_ability(ability: Ability):
@@ -43,8 +69,11 @@ func set_ability(ability: Ability):
 
 func _on_pressed():
 	if ability == null: return
-	if disabled: return
 	
-	disabled = true
+	if _disabled: 
+		_shake()
+		return
+	
+	_disabled = true
 	EventBus.play_cast_ability.emit(ability)
 	
