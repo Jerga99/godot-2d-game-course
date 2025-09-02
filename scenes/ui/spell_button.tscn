@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0cvb73klp1a4" path="res://assets/UI/Button_Simple.png" id="1_2ccg4"]
 [ext_resource type="Script" uid="uid://bufw56dnhrpmw" path="res://scripts/utils/spell_button.gd" id="2_vqbiu"]
 
-[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar")]
+[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar", "timer")]
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 texture_normal = ExtResource("1_2ccg4")
@@ -11,6 +11,7 @@ stretch_mode = 0
 script = ExtResource("2_vqbiu")
 icon = NodePath("MarginContainer/TextureRect")
 progress_bar = NodePath("TextureProgressBar")
+timer = NodePath("Timer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,9 +36,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+step = 0.05
 fill_mode = 5
 nine_patch_stretch = true
 texture_progress = ExtResource("1_2ccg4")
 tint_progress = Color(0.14902, 0.14902, 0.14902, 0.431373)
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
