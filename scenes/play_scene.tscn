@@ -142,21 +142,21 @@ unicode = 113
 [sub_resource type="Shortcut" id="Shortcut_0auek"]
 events = [SubResource("InputEventKey_ibixv")]
 
-[node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition")]
+[node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition", "player_health_bar")]
 script = ExtResource("1_btd5q")
 screen_transition = NodePath("CanvasLayer/ColorRect")
+player_health_bar = NodePath("CanvasLayer/Control/PlayerHealthBar")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
 zoom = Vector2(6, 6)
 script = ExtResource("1_1p5oe")
 follow_target = NodePath("../Player")
 
-[node name="Player" parent="." node_paths=PackedStringArray("spell_bar", "health_bar") instance=ExtResource("2_0tbyp")]
+[node name="Player" parent="." node_paths=PackedStringArray("spell_bar") instance=ExtResource("2_0tbyp")]
 z_index = 100
 position = Vector2(66, -65)
 speed = 100.0
 spell_bar = NodePath("../CanvasLayer/Control/SpellBar")
-health_bar = NodePath("../CanvasLayer/Control/PlayerHealthBar")
 max_health = 200.0
 
 [node name="Map" type="Node" parent="."]

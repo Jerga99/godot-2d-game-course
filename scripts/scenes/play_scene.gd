@@ -2,6 +2,7 @@ class_name PlayScene
 extends Node
 
 @export var screen_transition: ColorRect
+@export var player_health_bar: PlayerHealthBar
 
 func _ready():
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -17,6 +18,8 @@ func _handle_game_over(player: Player):
 	
 	player.current_health = player.max_health
 	player.is_dead = false
+	
+	EventBus.player_health_changed.emit(player.current_health, player.max_health)
 
 	
 func fade_out_overlay():
