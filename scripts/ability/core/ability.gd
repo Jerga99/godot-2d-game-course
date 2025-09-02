@@ -6,6 +6,7 @@ extends Node
 @export var energy_cost: float = 10.0
 
 var current_cooldown: float
+var can_be_casted = false
 
 func activate(entity: Entity):
 	var context = AbilityContext.new(entity, self)

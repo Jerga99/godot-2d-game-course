@@ -21,13 +21,18 @@ var binded_key: String = "":
 		
 func _process(delta):
 	if ability == null: return
-	disabled = ability.current_cooldown > 0
+	disabled = not ability.can_be_casted
 	progress_bar.value = ability.current_cooldown
 	
 	if disabled:
-		cooldown_label.text = "%3.1f" % ability.current_cooldown
+		if ability.current_cooldown > 0:
+			cooldown_label.text = "%3.1f" % ability.current_cooldown
+		else: cooldown_label.text = ""
+		
+		icon.modulate.a = 0.5
 	else:
 		cooldown_label.text = ""
+		icon.modulate.a = 1.0
 	
 		
 func set_ability(ability: Ability):
