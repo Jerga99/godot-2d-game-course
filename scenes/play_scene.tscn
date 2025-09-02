@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=29 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -143,6 +143,10 @@ unicode = 113
 [sub_resource type="Shortcut" id="Shortcut_0auek"]
 events = [SubResource("InputEventKey_ibixv")]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bx6jv"]
+font_size = 40
+font_color = Color(0.82606, 0.82606, 0.82606, 1)
+
 [node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition", "player_health_bar")]
 script = ExtResource("1_btd5q")
 screen_transition = NodePath("CanvasLayer/ColorRect")
@@ -245,7 +249,7 @@ layout_mode = 2
 [node name="SpellButton4" parent="CanvasLayer/Control/SpellBar/MarginContainer/HBoxContainer" instance=ExtResource("9_ibixv")]
 layout_mode = 2
 
-[node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer/Control" node_paths=PackedStringArray("label")]
 texture_filter = 1
 layout_mode = 0
 offset_left = 410.0
@@ -261,8 +265,27 @@ texture_under = ExtResource("10_63tcr")
 texture_over = ExtResource("11_qhxom")
 texture_progress = ExtResource("12_dta8y")
 script = ExtResource("13_dta8y")
+label = NodePath("Label")
 
-[node name="PlayerEnergyBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/PlayerHealthBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_bx6jv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerEnergyBar" type="TextureProgressBar" parent="CanvasLayer/Control" node_paths=PackedStringArray("label")]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1249.0
@@ -278,6 +301,25 @@ texture_under = ExtResource("10_63tcr")
 texture_over = ExtResource("11_qhxom")
 texture_progress = ExtResource("13_qhxom")
 script = ExtResource("15_bx6jv")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PlayerEnergyBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_bx6jv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Demon" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(-10, 67)

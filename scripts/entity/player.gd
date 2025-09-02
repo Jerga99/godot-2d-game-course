@@ -44,8 +44,6 @@ func _process(delta: float):
 	_handle_regen_energy(delta)
 	_handle_animation()
 	
-	print(current_energy)
-	
 func _handle_regen_energy(delta: float):
 	if current_energy >= max_energy:
 		current_energy = max_energy
