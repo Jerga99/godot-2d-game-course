@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://jmcksjjvx7di"]
+[gd_scene load_steps=4 format=3 uid="uid://jmcksjjvx7di"]
 
 [ext_resource type="Texture2D" uid="uid://b0cvb73klp1a4" path="res://assets/UI/Button_Simple.png" id="1_2ccg4"]
 [ext_resource type="Script" uid="uid://bufw56dnhrpmw" path="res://scripts/utils/spell_button.gd" id="2_vqbiu"]
 
-[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar")]
+[sub_resource type="LabelSettings" id="LabelSettings_2ccg4"]
+font_size = 22
+
+[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar", "cooldown_label")]
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 texture_normal = ExtResource("1_2ccg4")
@@ -11,6 +14,7 @@ stretch_mode = 0
 script = ExtResource("2_vqbiu")
 icon = NodePath("MarginContainer/TextureRect")
 progress_bar = NodePath("TextureProgressBar")
+cooldown_label = NodePath("CooldownLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,5 +44,23 @@ fill_mode = 5
 nine_patch_stretch = true
 texture_progress = ExtResource("1_2ccg4")
 tint_progress = Color(0.14902, 0.14902, 0.14902, 0.431373)
+
+[node name="CooldownLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -41.0
+offset_right = -8.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "10"
+label_settings = SubResource("LabelSettings_2ccg4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
