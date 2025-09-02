@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://jmcksjjvx7di"]
+[gd_scene load_steps=5 format=3 uid="uid://jmcksjjvx7di"]
 
 [ext_resource type="Texture2D" uid="uid://b0cvb73klp1a4" path="res://assets/UI/Button_Simple.png" id="1_2ccg4"]
 [ext_resource type="Script" uid="uid://bufw56dnhrpmw" path="res://scripts/utils/spell_button.gd" id="2_vqbiu"]
@@ -6,7 +6,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_2ccg4"]
 font_size = 22
 
-[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar", "cooldown_label")]
+[sub_resource type="LabelSettings" id="LabelSettings_a8xnk"]
+font_size = 22
+
+[node name="SpellButton" type="TextureButton" node_paths=PackedStringArray("icon", "progress_bar", "cooldown_label", "keybind_label")]
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 texture_normal = ExtResource("1_2ccg4")
@@ -15,6 +18,7 @@ script = ExtResource("2_vqbiu")
 icon = NodePath("MarginContainer/TextureRect")
 progress_bar = NodePath("TextureProgressBar")
 cooldown_label = NodePath("CooldownLabel")
+keybind_label = NodePath("KeybindLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -60,6 +64,17 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "10"
 label_settings = SubResource("LabelSettings_2ccg4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeybindLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 41.0
+offset_bottom = 36.0
+text = "1"
+label_settings = SubResource("LabelSettings_a8xnk")
 horizontal_alignment = 1
 vertical_alignment = 1
 

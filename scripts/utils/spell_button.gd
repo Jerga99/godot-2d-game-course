@@ -7,6 +7,7 @@ var ability: Ability = null
 @export var icon: TextureRect
 @export var progress_bar: TextureProgressBar
 @export var cooldown_label: Label
+@export var keybind_label: Label
 
 var binded_key: String = "":
 	set (key):
@@ -16,6 +17,7 @@ var binded_key: String = "":
 		input_key.keycode = key.unicode_at(0)
 		shortcut.events = [input_key]
 		cooldown_label.text = ""
+		keybind_label.text = key
 		
 func _process(delta):
 	if ability == null: return
