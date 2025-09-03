@@ -17,9 +17,11 @@ func _handle_game_over(player: Player):
 	await tween.finished
 	
 	player.current_health = player.max_health
+	player.current_energy = player.max_energy
 	player.is_dead = false
 	
 	EventBus.player_health_changed.emit(player.current_health, player.max_health)
+	EventBus.player_energy_changed.emit(player.current_energy, player.max_energy)
 
 	
 func fade_out_overlay():

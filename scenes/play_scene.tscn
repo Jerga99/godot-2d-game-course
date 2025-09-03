@@ -162,7 +162,7 @@ z_index = 100
 position = Vector2(66, -65)
 speed = 100.0
 spell_bar = NodePath("../CanvasLayer/Control/SpellBar")
-max_health = 200.0
+max_health = 70.0
 energy_regen_freq = 1.0
 
 [node name="Map" type="Node" parent="."]
