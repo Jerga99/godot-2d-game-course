@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cqsorrlaroety"]
+[gd_scene load_steps=51 format=3 uid="uid://cqsorrlaroety"]
 
 [ext_resource type="Texture2D" uid="uid://bmk5fue137rnj" path="res://assets/AnimationSheet_Character (3).png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b5va61owxmjec" path="res://scripts/entity/player.gd" id="1_onrkg"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d3uqiir14ipaa" path="res://assets/Sounds/Dirt Walk 5.wav" id="6_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://chgv7le0tmn2v" path="res://assets/meleeAttack_plusCharacters.png" id="6_tuyoq"]
 [ext_resource type="Script" uid="uid://xt6qkn18p131" path="res://scripts/resources/audio_config.gd" id="7_fulsm"]
+[ext_resource type="PackedScene" uid="uid://cbx2hi1ex2f1f" path="res://scenes/ability/dash_ability.tscn" id="13_oprun"]
 [ext_resource type="Script" uid="uid://4u4jaopqq2j3" path="res://scripts/utils/footstep_effect.gd" id="14_f1ej7"]
 
 [sub_resource type="Resource" id="Resource_4r5pv"]
@@ -286,6 +287,8 @@ script = ExtResource("3_i3pqv")
 [node name="Slash" parent="AbilityController" instance=ExtResource("4_sweqy")]
 
 [node name="WeaponThrowAbility" parent="AbilityController" instance=ExtResource("6_fjrip")]
+
+[node name="DashAbility" parent="AbilityController" instance=ExtResource("13_oprun")]
 
 [node name="Weapon" type="Sprite2D" parent="."]
 z_index = -1
