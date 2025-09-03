@@ -276,10 +276,8 @@ max_health = 30.0
 texture_filter = 1
 material = SubResource("ShaderMaterial_smehm")
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"throw"
+animation = &"run"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("3_i3pqv")

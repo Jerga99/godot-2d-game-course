@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbx2hi1ex2f1f"]
+[gd_scene load_steps=5 format=3 uid="uid://cbx2hi1ex2f1f"]
 
 [ext_resource type="Script" uid="uid://d4bdrosfafb2i" path="res://scripts/ability/core/ability.gd" id="1_17238"]
 [ext_resource type="Texture2D" uid="uid://cn7q0v17bqh8b" path="res://assets/Free - Raven Fantasy Icons/Free - Raven Fantasy Icons/Separated Files/64x64/fc725.png" id="2_1tafh"]
 [ext_resource type="Script" uid="uid://c8htvbdy2nj8o" path="res://scripts/ability/component/ability_push_back.gd" id="3_45ffm"]
+[ext_resource type="Script" uid="uid://cr7jqckdh4pru" path="res://scripts/ability/component/ability_clone_self.gd" id="4_1tafh"]
 
 [node name="DashAbility" type="Node"]
 script = ExtResource("1_17238")
@@ -18,3 +19,7 @@ duration = 0.15
 frequency = -1
 revert = true
 metadata/_custom_type_script = "uid://c8htvbdy2nj8o"
+
+[node name="AbilityCloneSelf" type="Node" parent="."]
+script = ExtResource("4_1tafh")
+metadata/_custom_type_script = "uid://cr7jqckdh4pru"
