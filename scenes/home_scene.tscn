@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://biel2vc4kbbpp"]
+[gd_scene load_steps=3 format=3 uid="uid://biel2vc4kbbpp"]
 
+[ext_resource type="Script" uid="uid://bvly4jry4308s" path="res://scripts/utils/home_scene.gd" id="1_jfeqw"]
 [ext_resource type="Texture2D" uid="uid://b0qet67bgtvth" path="res://assets/unknown_adventure_poster.png" id="1_umrym"]
 
 [node name="HomeScene" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jfeqw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -19,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_umrym")
 
-[node name="Button" type="Button" parent="."]
+[node name="PlayBtn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,7 +37,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="Button2" type="Button" parent="."]
+[node name="ExitBtn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,3 +52,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
