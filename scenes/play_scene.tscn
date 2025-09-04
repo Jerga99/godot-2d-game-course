@@ -380,3 +380,4 @@ bus = &"music"
 
 [connection signal="pressed" from="CanvasLayer/Control/PauseBtn" to="." method="_on_pause_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PauseMenu/ResumeBtn" to="CanvasLayer/Control/PauseMenu" method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PauseMenu/ExitBtn" to="CanvasLayer/Control/PauseMenu" method="_on_exit_btn_pressed"]

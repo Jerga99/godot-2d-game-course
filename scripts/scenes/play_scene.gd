@@ -8,6 +8,7 @@ extends Node
 func _ready():
 	var player = get_tree().get_first_node_in_group("player") as Player
 	player.player_died.connect(_handle_game_over)
+	EventBus.game_paused.connect(_handle_paused)
 
 func _handle_game_over(player: Player):
 	var tween = fade_in_overlay()
@@ -49,6 +50,21 @@ func _on_pause_btn_pressed():
 	EventBus.game_paused.emit(true)
 	pause_menu.show()
 	get_tree().paused = true
+	
+func _handle_paused(paused: bool):
+	if paused:
+		screen_transition.color = Color(0,0,0, 0.5)
+	else:
+		screen_transition.color = Color(0,0,0,0)
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
