@@ -321,6 +321,19 @@ label_settings = SubResource("LabelSettings_bx6jv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PauseBtn" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_top = 20.0
+offset_right = -21.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Pause"
+
 [node name="Demon" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(-10, 67)
 max_health = 20.0
@@ -332,3 +345,5 @@ position = Vector2(42, 76)
 stream = ExtResource("9_uyxvy")
 autoplay = true
 bus = &"music"
+
+[connection signal="pressed" from="CanvasLayer/Control/PauseBtn" to="." method="_on_pause_btn_pressed"]

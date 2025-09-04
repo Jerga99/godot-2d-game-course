@@ -43,3 +43,10 @@ func fade_in_overlay():
 		1.0	
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
+
+
+func _on_pause_btn_pressed():
+	get_tree().paused = true
+	
+	
+	
