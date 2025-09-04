@@ -11,6 +11,7 @@ var velocity: Vector2
 var current_speed: float
 var last_position
 var chasing = false
+var memory_timer = 0.0
 
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
@@ -29,8 +30,9 @@ func _ready():
 func _process(delta: float):
 	if is_dead: return
 	
+	var distance = position.distance_to(player.position)
+	
 	if not aggresive:
-		var distance = position.distance_to(player.position)
 		if distance <= 60: chasing = true
 	
 	if chasing and player != null:
@@ -52,6 +54,13 @@ func _process(delta: float):
 	
 	last_position = position
 	_handle_animations()
+	
+	if not aggresive and chasing and distance >= 100:
+		memory_timer += delta
+		
+		if memory_timer >= memory:
+			memory_timer = 0.0
+			chasing = false
 
 
 func _handle_animations():
