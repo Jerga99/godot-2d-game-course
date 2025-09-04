@@ -4,6 +4,10 @@ extends Node
 
 @export var packed_enemies: Array[PackedScene] = []
 @export var spawn_interval = 1.0
+@export var spawn_around: Node2D
+
+@export var min_spawn_radius = 120
+@export var max_spawn_radius = 180
 
 var spawn_timer = 0.0
 
@@ -19,5 +23,9 @@ func spawn_enemy():
 	var enemy_scene = packed_enemies[idx]
 	var enemy = enemy_scene.instantiate() as Enemy
 	
-	enemy.global_position = Vector2.ZERO
+	var spawn_radius = randf_range(min_spawn_radius, max_spawn_radius)
+	var rand_pos = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * spawn_radius
+	var spawn_pos = spawn_around.global_position + rand_pos
+	
+	enemy.global_position = spawn_pos
 	get_parent().add_child(enemy)
