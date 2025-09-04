@@ -3,11 +3,14 @@ extends Entity
 
 @export var speed: float = 10.0
 @export var stop_distance: float = 10.0
+@export var aggresive = false
+@export var memory = 0.0
 
 var player: Player
 var velocity: Vector2
 var current_speed: float
 var last_position
+var chasing = false
 
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
@@ -20,11 +23,17 @@ func _ready():
 	last_position = position
 	player =  get_tree().get_first_node_in_group("player")
 	
+	if aggresive: chasing = true
+	
 	
 func _process(delta: float):
 	if is_dead: return
 	
-	if player != null:
+	if not aggresive:
+		var distance = position.distance_to(player.position)
+		if distance <= 60: chasing = true
+	
+	if chasing and player != null:
 		var movement_dir = Vector2.ZERO
 		
 		if pathfinding != null:
