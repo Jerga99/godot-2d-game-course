@@ -3,6 +3,7 @@ extends Node
 
 @export var screen_transition: ColorRect
 @export var player_health_bar: PlayerHealthBar
+@export var pause_menu: PauseMenu
 
 func _ready():
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -46,6 +47,7 @@ func fade_in_overlay():
 
 func _on_pause_btn_pressed():
 	EventBus.game_paused.emit(true)
+	pause_menu.show()
 	get_tree().paused = true
 	
 	

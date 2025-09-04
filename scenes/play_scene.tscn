@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=30 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dri6mi14y2imb" path="res://scripts/utils/player_health_bar.gd" id="13_dta8y"]
 [ext_resource type="Texture2D" uid="uid://b52dp4ve7hcib" path="res://assets/UI/energy_bar_energy.png" id="13_qhxom"]
 [ext_resource type="Script" uid="uid://bbv8kec12leld" path="res://scripts/utils/player_energy_bar.gd" id="15_bx6jv"]
+[ext_resource type="Script" uid="uid://dp5sccaf7aosr" path="res://scripts/utils/pause_menu.gd" id="16_ixvqh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
 texture = ExtResource("3_1p5oe")
@@ -147,10 +148,11 @@ events = [SubResource("InputEventKey_ibixv")]
 font_size = 40
 font_color = Color(0.82606, 0.82606, 0.82606, 1)
 
-[node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition", "player_health_bar")]
+[node name="PlayScene" type="Node2D" node_paths=PackedStringArray("screen_transition", "player_health_bar", "pause_menu")]
 script = ExtResource("1_btd5q")
 screen_transition = NodePath("CanvasLayer/ColorRect")
 player_health_bar = NodePath("CanvasLayer/Control/PlayerHealthBar")
+pause_menu = NodePath("CanvasLayer/Control/PauseMenu")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
 zoom = Vector2(6, 6)
@@ -335,6 +337,7 @@ theme_override_font_sizes/font_size = 30
 text = "Pause"
 
 [node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -348,6 +351,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
+script = ExtResource("16_ixvqh")
 
 [node name="ResumeBtn" type="Button" parent="CanvasLayer/Control/PauseMenu"]
 custom_minimum_size = Vector2(0, 80)
@@ -375,3 +379,4 @@ autoplay = true
 bus = &"music"
 
 [connection signal="pressed" from="CanvasLayer/Control/PauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PauseMenu/ResumeBtn" to="CanvasLayer/Control/PauseMenu" method="_on_resume_btn_pressed"]
