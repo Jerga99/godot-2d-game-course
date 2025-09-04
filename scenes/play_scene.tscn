@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=31 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b52dp4ve7hcib" path="res://assets/UI/energy_bar_energy.png" id="13_qhxom"]
 [ext_resource type="Script" uid="uid://bbv8kec12leld" path="res://scripts/utils/player_energy_bar.gd" id="15_bx6jv"]
 [ext_resource type="Script" uid="uid://dp5sccaf7aosr" path="res://scripts/utils/pause_menu.gd" id="16_ixvqh"]
+[ext_resource type="Script" uid="uid://l1otqvo8t57j" path="res://scripts/entity/enemy_spawner.gd" id="19_hjngv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0jw4"]
 texture = ExtResource("3_1p5oe")
@@ -377,6 +378,10 @@ position = Vector2(42, 76)
 stream = ExtResource("9_uyxvy")
 autoplay = true
 bus = &"music"
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("19_hjngv")
+packed_enemies = Array[PackedScene]([ExtResource("6_da3qe"), ExtResource("8_7pyap")])
 
 [connection signal="pressed" from="CanvasLayer/Control/PauseBtn" to="." method="_on_pause_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PauseMenu/ResumeBtn" to="CanvasLayer/Control/PauseMenu" method="_on_resume_btn_pressed"]

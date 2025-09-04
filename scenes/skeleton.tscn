@@ -339,6 +339,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_txkty")
 speed = 20.0
 stop_distance = 25.0
+aggresive = true
 memory = 5.0
 max_health = 300.0
 damage_text_color = Color(1, 1, 1, 1)
