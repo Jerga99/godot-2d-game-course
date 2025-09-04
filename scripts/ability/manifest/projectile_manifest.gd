@@ -17,6 +17,7 @@ var current_distance = 0.0
 
 func activate(context: AbilityContext):
 	EventBus.game_paused.connect(_handle_game_pause)
+	EventBus.scene_changed.connect(_handle_scene_change)
 	if context.targets.size() > 0:
 		var target_pos = context.get_target_position(0)
 		current_dir = (target_pos - global_position).normalized()
@@ -35,6 +36,10 @@ func _process(delta):
 
 func _handle_game_pause(paused: bool):
 	(sprite2d.texture as AnimatedTexture).pause = paused
+
+func _handle_scene_change(scene: String):
+	if scene == "home":
+		queue_free()
 	
 func _on_area_2d_area_entered(area: Area2D):
 	var parent = area.get_parent()

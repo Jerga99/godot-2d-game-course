@@ -48,9 +48,10 @@ func _process(delta: float):
 		else:
 			ability_controller.trigger_ability_by_idx(0)
 		
-		velocity = (position - last_position) / delta
-		current_speed = velocity.length()
 		_face_target(player.position - position)
+		
+	velocity = (position - last_position) / delta
+	current_speed = velocity.length()
 	
 	last_position = position
 	_handle_animations()
