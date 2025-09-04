@@ -13,4 +13,5 @@ func _on_resume_btn_pressed():
 	hide()
 
 func _on_exit_btn_pressed():
-	ResourceLocator.go_to_play_scene()
+	get_tree().paused = false
+	ResourceLocator.go_to_home_scene()
