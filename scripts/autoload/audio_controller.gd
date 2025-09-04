@@ -4,6 +4,7 @@ var buffer_size = 5
 var available_players: Array[AudioStreamPlayer2D] = []
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_setup_audio_players()
 
 func _setup_audio_players():

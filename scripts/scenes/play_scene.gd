@@ -44,8 +44,8 @@ func fade_in_overlay():
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
-
 func _on_pause_btn_pressed():
+	EventBus.game_paused.emit(true)
 	get_tree().paused = true
 	
 	
