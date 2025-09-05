@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Unknown Adventure"
-run/main_scene="uid://cupet4wimcgu0"
+run/main_scene="uid://biel2vc4kbbpp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
