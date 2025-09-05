@@ -19,8 +19,8 @@ config/icon="res://icon.svg"
 
 ResourceLocator="*res://scripts/autoload/resource_locator.gd"
 FloatText="*res://scripts/autoload/float_text.gd"
-AudioController="*res://scenes/autoload/audio_controller.tscn"
 EventBus="*res://scripts/autoload/event_bus.gd"
+AudioController="*res://scripts/autoload/audio_controller.gd"
 
 [display]
 

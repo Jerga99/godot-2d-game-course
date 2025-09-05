@@ -2,10 +2,15 @@ extends Node
 
 var buffer_size = 5
 var available_players: Array[AudioStreamPlayer2D] = []
+var bg_music_player: AudioStreamPlayer2D = null
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_setup_audio_players()
+	
+	bg_music_player = AudioStreamPlayer2D.new()
+	bg_music_player.name = "BgMusicPlayer"
+	add_child(bg_music_player)
 
 func _setup_audio_players():
 	for i in range(buffer_size):

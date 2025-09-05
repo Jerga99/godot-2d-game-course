@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cupet4wimcgu0"]
+[gd_scene load_steps=30 format=4 uid="uid://cupet4wimcgu0"]
 
 [ext_resource type="Script" uid="uid://bx0us8nmrqijg" path="res://scripts/utils/follow_camera.gd" id="1_1p5oe"]
 [ext_resource type="Script" uid="uid://d3gn4uashgx52" path="res://scripts/scenes/play_scene.gd" id="1_btd5q"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://18260mtnp6v" path="res://scenes/demon.tscn" id="8_7pyap"]
 [ext_resource type="Script" uid="uid://dbxh71dciew6j" path="res://scripts/utils/spell_bar.gd" id="8_ck16l"]
 [ext_resource type="PackedScene" uid="uid://jmcksjjvx7di" path="res://scenes/ui/spell_button.tscn" id="9_ibixv"]
-[ext_resource type="AudioStream" uid="uid://dmq80yjutsd6d" path="res://assets/Sounds/Forest Day.wav" id="9_uyxvy"]
 [ext_resource type="Texture2D" uid="uid://fdy5odinku5x" path="res://assets/UI/health_bar_main.png" id="10_63tcr"]
 [ext_resource type="Texture2D" uid="uid://b5x2yhh37dxs6" path="res://assets/UI/health_bar_overlay.png" id="11_qhxom"]
 [ext_resource type="Texture2D" uid="uid://0shycwxt2tv4" path="res://assets/UI/health_bar_health.png" id="12_dta8y"]
@@ -373,11 +372,6 @@ max_health = 20.0
 
 [node name="Demon2" parent="." instance=ExtResource("8_7pyap")]
 position = Vector2(42, 76)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_uyxvy")
-autoplay = true
-bus = &"music"
 
 [node name="EnemySpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_around")]
 script = ExtResource("19_hjngv")
