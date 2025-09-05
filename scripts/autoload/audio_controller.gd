@@ -4,6 +4,11 @@ var buffer_size = 5
 var available_players: Array[AudioStreamPlayer2D] = []
 var bg_music_player: AudioStreamPlayer2D = null
 
+var audio_clip_home: AudioStream = preload("res://assets/Sounds/fantasy_home_bg.mp3")
+var audio_clip_play: AudioStream = preload("res://assets/Sounds/drums_battle.mp3")
+
+var bg_music: Dictionary = {"home_scene": audio_clip_home, "play_scene": audio_clip_play}
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_setup_audio_players()
@@ -27,6 +32,12 @@ func _get_avaiable_player():
 		return available_players[player_idx]
 	else: return null
 
+func play_bg_music(clip_name: String):
+	var clip = bg_music.get(clip_name)
+	bg_music_player.stop()
+	bg_music_player.bus = "music"
+	bg_music_player.stream = clip
+	bg_music_player.play()
 		
 func play(clip_config: AudioConfig, global_pos = Vector2.INF):
 	if clip_config == null: return
