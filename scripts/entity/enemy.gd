@@ -5,6 +5,7 @@ extends Entity
 @export var stop_distance: float = 10.0
 @export var aggresive = false
 @export var memory = 0.0
+@export var hit_particles: CPUParticles2D
 
 var player: Player
 var velocity: Vector2
@@ -15,7 +16,6 @@ var memory_timer = 0.0
 
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var hit_particles: CPUParticles2D = $HitParticles
 @onready var pathfinding: Pathfinding = $Pathfinding
 
 func _ready():
